@@ -29,7 +29,7 @@ export default function Question5() {
   };
 
   const handleNext = () => {
-    router.push("/result"); // ✅ 결과 페이지로 이동
+    router.push("/loading"); // ✅ 결과 페이지로 이동
   };
 
   const handlePrev = () => {
