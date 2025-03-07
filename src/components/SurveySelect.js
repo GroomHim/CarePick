@@ -1,9 +1,23 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import styles from "../styles/SurveySelect.module.css";
 
 export default function SurveySelect() {
-  const [selectedSurvey, setSelectedSurvey] = useState(null); // 선택 상태
+
+  {/*설문지 페이지가 없어서 임시로 결과 페이지로 렌딩*/}
+  const [selectedSurvey, setSelectedSurvey] = useState(""); 
+  const router = useRouter();
+
+  useEffect(() => {
+    if (selectedSurvey) {
+      router.push('/result');
+    }
+  }, [selectedSurvey, router]);
+
+  const handleSurveySelect = (type) => {
+    setSelectedSurvey(type);
+  };
 
   return (
     <div className={styles.container}>
@@ -30,7 +44,7 @@ export default function SurveySelect() {
             className={`${styles.button} ${
               selectedSurvey === "simple" ? styles.selected : ""
             }`}
-            onClick={() => setSelectedSurvey("simple")}
+            onClick={() => handleSurveySelect("simple")}
           >
             간단 설문지
           </button>
@@ -40,7 +54,7 @@ export default function SurveySelect() {
             className={`${styles.button} ${
               selectedSurvey === "detailed" ? styles.selected : ""
             }`}
-            onClick={() => setSelectedSurvey("detailed")}
+            onClick={() => handleSurveySelect("detailed")}
           >
             상세 진단 설문지
           </button>
