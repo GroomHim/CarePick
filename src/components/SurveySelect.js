@@ -1,9 +1,18 @@
 "use client";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import styles from "../styles/SurveySelect.module.css";
 
 export default function SurveySelect() {
   const [selectedSurvey, setSelectedSurvey] = useState(null); // 선택 상태
+  const router = useRouter(); // Next.js 라우터
+
+  const handleSurveySelect = (surveyType) => {
+    setSelectedSurvey(surveyType);
+    if (surveyType === "simple") {
+      router.push("/question"); // 간단 설문지 선택 시 q1 페이지로 이동
+    }
+  };
 
   return (
     <div className={styles.container}>
@@ -30,7 +39,7 @@ export default function SurveySelect() {
             className={`${styles.button} ${
               selectedSurvey === "simple" ? styles.selected : ""
             }`}
-            onClick={() => setSelectedSurvey("simple")}
+            onClick={() => handleSurveySelect("simple")}
           >
             간단 설문지
           </button>
@@ -40,7 +49,7 @@ export default function SurveySelect() {
             className={`${styles.button} ${
               selectedSurvey === "detailed" ? styles.selected : ""
             }`}
-            onClick={() => setSelectedSurvey("detailed")}
+            onClick={() => handleSurveySelect("detailed")}
           >
             상세 진단 설문지
           </button>
