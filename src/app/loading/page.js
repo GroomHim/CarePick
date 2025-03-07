@@ -32,14 +32,14 @@ export default function LoadingScreen() {
       </p>
 
       <div className={styles.progressCircle}>
-        <svg width="150" height="150" viewBox="0 0 150 150">
+        <svg width="275" height="275" viewBox="0 0 150 150">
           {/* 회색 배경 원 (프로그레스 바 뒤쪽) */}
           <circle
             cx="75"
             cy="75"
             r="60"
             stroke="#E0E0E0"
-            strokeWidth="10"
+            strokeWidth="7"
             fill="none"
           />
 
@@ -52,7 +52,7 @@ export default function LoadingScreen() {
             cy="75"
             r="60"
             stroke="#222"
-            strokeWidth="10"
+            strokeWidth="7"
             fill="none"
             strokeDasharray="377" /* 전체 원 둘레 */
             strokeDashoffset={
