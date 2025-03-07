@@ -1,17 +1,11 @@
 "use client";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import styles from "../../styles/q1.module.css";
+import styles from "../../../styles/q1.module.css";
 
 export default function SurveyQuestion() {
   const router = useRouter();
-  const questions = [
-    "비누로 세수해도 당김이 없나요?",
-    "세안 후 피부가 건조하다고 느낀 적이 있나요?",
-    "외출 후 피부가 쉽게 번들거리나요?",
-    "화장품이 피부에 자극이 된다고 느낀 적이 있나요?",
-    "자외선에 노출되었을 때 피부가 쉽게 붉어지나요?",
-  ];
+  const questions = ["비누로 세수해도 당김이 없나요?"];
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedOption, setSelectedOption] = useState(null);
 
@@ -22,14 +16,18 @@ export default function SurveyQuestion() {
     "그런 편이다",
     "매우 그렇다",
   ];
-
+  // 다음 질문으로 이동
   const handleNext = () => {
-    if (currentQuestion < questions.length - 1) {
-      setCurrentQuestion(currentQuestion + 1);
-      setSelectedOption(null); // 다음 질문으로 이동하면 선택 초기화
+    router.push("/question/q2"); // 완료 후 메인 화면으로 이동
+  };
+
+  // 이전 질문으로 이동
+  const handlePrev = () => {
+    if (currentQuestion > 0) {
+      setCurrentQuestion(currentQuestion - 1);
+      setSelectedOption(null); // 이전 질문으로 이동하면 선택 초기화
     } else {
-      alert("설문이 완료되었습니다!");
-      router.push("/"); // 완료 후 메인 화면으로 이동
+      router.push("/"); // 첫 번째 질문이면 홈으로 이동
     }
   };
 
@@ -50,9 +48,9 @@ export default function SurveyQuestion() {
 
       {/* 설문 선택 박스 */}
       <div className={styles.surveyBox}>
-        <div className={styles.progress}>{`${currentQuestion + 1} / ${
-          questions.length
-        }`}</div>
+        <div className={styles.progress}>
+          <span className={styles.currentStep}>1</span> / 5
+        </div>
 
         {/* 옵션 선택 */}
         {options.map((option, index) => (
@@ -69,10 +67,7 @@ export default function SurveyQuestion() {
 
         {/* 이전 / 다음 버튼 */}
         <div className={styles.buttonContainer}>
-          <button
-            className={styles.prevButton}
-            disabled={currentQuestion === 0}
-          >
+          <button className={styles.prevButton} onClick={handlePrev}>
             이전
           </button>
           <button

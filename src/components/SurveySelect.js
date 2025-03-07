@@ -12,14 +12,14 @@ export default function SurveySelect() {
 
   useEffect(() => {
     if (selectedSurvey) {
-      router.push("/question");
+      router.push("/question/q1");
     }
   }, [selectedSurvey, router]);
 
   const handleSurveySelect = (surveyType, type) => {
     setSelectedSurvey(surveyType, type);
     if (surveyType === "simple") {
-      router.push("/question"); // 간단 설문지 선택 시 q1 페이지로 이동
+      router.push("/question/q1"); // 간단 설문지 선택 시 q1 페이지로 이동
     }
   };
 
