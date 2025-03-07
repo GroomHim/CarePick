@@ -1,18 +1,18 @@
 "use client";
 import { useRouter } from "next/navigation";
-import { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 import styles from "../styles/SurveySelect.module.css";
 
 export default function SurveySelect() {
-
-  {/*설문지 페이지가 없어서 임시로 결과 페이지로 렌딩*/}
-  const [selectedSurvey, setSelectedSurvey] = useState(""); 
+  {
+    /*설문지 페이지가 없어서 임시로 결과 페이지로 렌딩*/
+  }
+  const [selectedSurvey, setSelectedSurvey] = useState("");
   const router = useRouter();
 
   useEffect(() => {
     if (selectedSurvey) {
-      router.push('/result');
+      router.push("/question");
     }
   }, [selectedSurvey, router]);
 

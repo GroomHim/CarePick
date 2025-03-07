@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-color: #f4f4f4;
+  background-color: #f8f8f8;
 }
 
 /* 상단 텍스트 박스 */
@@ -12,6 +12,7 @@
   width: 784px;
   height: 85px;
   background-color: #2b2b2b;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   color: white;
   display: flex;
   align-items: center;
@@ -26,9 +27,11 @@
 .surveyBox {
   width: 784px;
   height: 610px;
-  background-color: white;
+  background-color: #f8f8f8;
   border-radius: 10px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  font-size: 30px;
+  font-weight: 700;
   padding: 40px;
   text-align: center;
 }
@@ -45,6 +48,12 @@
   display: flex;
   justify-content: center;
   gap: 16px;
+}
+.button:hover {
+  background-color: white;
+  border: 2px solid black;
+  color: black;
+  cursor: pointer;
 }
 
 /* 버튼 스타일 */
