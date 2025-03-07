@@ -1,14 +1,23 @@
 "use client";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import styles from "../styles/SurveySelect.module.css";
 
 export default function SurveySelect() {
-  const [selectedSurvey, setSelectedSurvey] = useState(null); // 선택 상태
-  const router = useRouter(); // Next.js 라우터
 
-  const handleSurveySelect = (surveyType) => {
-    setSelectedSurvey(surveyType);
+  {/*설문지 페이지가 없어서 임시로 결과 페이지로 렌딩*/}
+  const [selectedSurvey, setSelectedSurvey] = useState(""); 
+  const router = useRouter();
+
+  useEffect(() => {
+    if (selectedSurvey) {
+      router.push('/result');
+    }
+  }, [selectedSurvey, router]);
+
+  const handleSurveySelect = (surveyType, type) => {
+    setSelectedSurvey(surveyType, type);
     if (surveyType === "simple") {
       router.push("/question"); // 간단 설문지 선택 시 q1 페이지로 이동
     }
