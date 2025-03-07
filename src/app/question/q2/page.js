@@ -5,7 +5,7 @@ import styles from "../../../styles/q1.module.css";
 
 export default function SurveyQuestion() {
   const router = useRouter();
-  const questions = ["비누로 세수해도 당김이 없나요?"];
+  const questions = ["다음 중 해당하는 것을 모두 고르세요."];
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedOption, setSelectedOption] = useState(null);
 
