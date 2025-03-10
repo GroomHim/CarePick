@@ -28,12 +28,12 @@ export default function SurveyQuestion() {
 
   // 다음 질문으로 이동
   const handleNext = () => {
-    router.push("/question/q4"); // ✅ 4번째 질문으로 이동
+    router.push("/SimpleQuestion/q4"); // ✅ 4번째 질문으로 이동
   };
 
   // 이전 질문으로 이동
   const handlePrev = () => {
-    router.push("/question/q2"); // ✅ 2번째 질문으로 이동
+    router.push("/SimpleQuestion/q2"); // ✅ 2번째 질문으로 이동
   };
 
   return (

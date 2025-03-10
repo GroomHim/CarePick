@@ -17,12 +17,12 @@ export default function SurveyQuestion() {
 
   // 다음 질문으로 이동
   const handleNext = () => {
-    router.push("/question/q5"); // 완료 후 메인 화면으로 이동
+    router.push("/SimpleQuestion/q5"); // 완료 후 메인 화면으로 이동
   };
 
   // 이전 질문으로 이동
   const handlePrev = () => {
-    router.push("/question/q3"); // 첫 번째 질문이면 홈으로 이동
+    router.push("/SimpleQuestion/q3"); // 첫 번째 질문이면 홈으로 이동
   };
 
   return (

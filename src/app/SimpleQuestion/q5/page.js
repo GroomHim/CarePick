@@ -33,7 +33,7 @@ export default function Question5() {
   };
 
   const handlePrev = () => {
-    router.push("/question/q4"); // ✅ 4번째 질문으로 이동
+    router.push("/SimpleQuestion/q4"); // ✅ 4번째 질문으로 이동
   };
 
   return (
