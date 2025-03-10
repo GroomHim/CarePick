@@ -43,9 +43,10 @@
 .resultBox {
   width: 600px;
   min-height: 700px;
-  background-color: #F8F8F8;
+  background-color: #f8f8f8;
   border-radius: 10px;
-  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.20), 0px 0px 40px 4px rgba(0, 0, 0, 0.13);
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.2),
+    0px 0px 40px 4px rgba(0, 0, 0, 0.13);
   padding: 40px;
   text-align: left;
   display: flex;
@@ -63,12 +64,12 @@
   font-weight: 700;
   line-height: 140%;
   letter-spacing: -0.9px;
-  color: rgba(17, 17, 17, 0.80);
+  color: rgba(17, 17, 17, 0.8);
   margin: 0;
 }
 
 .highlight {
-  color: #4793D9;
+  color: #4793d9;
   font-weight: 800;
   font-size: 32px;
   font-style: normal;
@@ -79,7 +80,7 @@
 
 .resultDescription {
   align-self: stretch;
-  color: rgba(17, 17, 17, 0.80);
+  color: rgba(17, 17, 17, 0.8);
   font-family: SUIT;
   font-size: 16px;
   font-style: normal;
@@ -161,20 +162,22 @@
 }
 
 @media (max-width: 650px) {
-  .header, .skinTypeButton, .resultBox {
+  .header,
+  .skinTypeButton,
+  .resultBox {
     width: 90%;
   }
-  
+
   .productCard {
     flex-direction: column;
     align-items: center;
   }
-  
+
   .productImageContainer {
     margin-right: 0;
     margin-bottom: 20px;
   }
-  
+
   .productInfo {
     text-align: center;
   }

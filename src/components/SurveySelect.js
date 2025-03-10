@@ -43,6 +43,13 @@ export default function SurveySelect() {
             }`}
             onClick={() => handleSurveySelect("simple")}
           >
+            {/* {selectedSurvey === "simple" && (
+              <img
+                src="/checkIcon.svg"
+                alt="체크 아이콘"
+                className={styles.checkIcon}
+              />
+            )} */}
             간단 설문지
           </button>
 
@@ -53,6 +60,13 @@ export default function SurveySelect() {
             }`}
             onClick={() => handleSurveySelect("detailed")}
           >
+            {/* {selectedSurvey === "detailed" && (
+              <img
+                src="/checkIcon.svg"
+                alt="체크 아이콘"
+                className={styles.checkIcon}
+              />
+            )} */}
             상세 진단 설문지
           </button>
         </div>
