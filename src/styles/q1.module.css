@@ -63,7 +63,7 @@
 .option:hover {
   background-color: white;
   color: black;
-  border: 2px solid black;
+  border: 2px solid rgb(176, 176, 176);
 }
 .optionsGrid {
   display: grid;
@@ -128,6 +128,9 @@
   object-fit: cover; /* ✅ 이미지 크롭 */
   border-radius: 10px;
   border: 2px solid transparent;
+}
+.optionImage:hover {
+  border: 2px solid rgb(176, 176, 176);
 }
 
 /* ✅ 선택된 이미지 강조 */

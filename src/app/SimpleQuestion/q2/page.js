@@ -16,14 +16,21 @@ export default function SurveyQuestion() {
 
   const [selectedOptions, setSelectedOptions] = useState([]); // 다중 선택 가능하도록 배열로 변경
 
-  // ✅ 옵션 선택 / 해제 (토글 방식)
   const handleOptionClick = (option) => {
-    setSelectedOptions(
-      (prevSelected) =>
-        prevSelected.includes(option)
-          ? prevSelected.filter((item) => item !== option) // 이미 선택된 경우 → 제거 (선택 해제)
-          : [...prevSelected, option] // 선택되지 않은 경우 → 추가 (선택)
-    );
+    if (option === "해당 없음") {
+      setSelectedOptions((prevSelected) =>
+        prevSelected.includes(option) ? [] : [option]
+      );
+    } else {
+      setSelectedOptions(
+        (prevSelected) =>
+          prevSelected.includes("해당 없음")
+            ? [option] // 해당 없음 선택되어 있으면 다른 옵션만 선택
+            : prevSelected.includes(option)
+            ? prevSelected.filter((item) => item !== option) // 선택 해제
+            : [...prevSelected, option] // 새 옵션 추가
+      );
+    }
   };
 
   // ✅ 다음 질문으로 이동
@@ -63,6 +70,9 @@ export default function SurveyQuestion() {
               selectedOptions.includes(option) ? styles.selected : ""
             }`}
             onClick={() => handleOptionClick(option)}
+            disabled={
+              selectedOptions.includes("해당 없음") && option !== "해당 없음"
+            }
           >
             {option}
           </button>
