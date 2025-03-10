@@ -5,26 +5,35 @@ import styles from "../../../styles/q1.module.css";
 
 export default function SurveyQuestion() {
   const router = useRouter();
-  const questions = ["다음 중 해당하는 것을 모두 고르세요."];
-  const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [selectedOption, setSelectedOption] = useState(null);
-
+  const question = "다음 중 해당하는 것을 모두 고르세요.";
   const options = [
-    "어떤 운동이든 운동 후 피부가 붉어지는 편이다",
-    "화장품을 바르고 가렵거나 따가운적이 있다.",
-    "아토피나 금속, 햇빛 알러지를 앓은 적이 있다.",
-    "얼굴 피부 중에서도 핏줄이 보이는 곳이 있다.",
+    "햇빛에 타면 빨개지기 보다 깨어진다.",
+    "여드름 자국이 갈색으로 변한다.",
+    "햇빛을 받으면 주근깨가 생긴다.",
+    "피부가 전체적으로 얼룩덜룩 하다.",
     "해당 없음",
   ];
 
+  const [selectedOptions, setSelectedOptions] = useState([]); // ✅ 다중 선택 가능하도록 배열로 변경
+
+  /// 옵션 선택 (토글 방식)
+  const handleOptionClick = (option) => {
+    setSelectedOptions(
+      (prevSelected) =>
+        prevSelected.includes(option)
+          ? prevSelected.filter((item) => item !== option) // ✅ 이미 선택된 경우 → 제거
+          : [...prevSelected, option] // ✅ 선택되지 않은 경우 → 추가
+    );
+  };
+
   // 다음 질문으로 이동
   const handleNext = () => {
-    router.push("/question/q3"); // 완료 후 메인 화면으로 이동
+    router.push("/DetailQuestion/q5"); // ✅ 4번째 질문으로 이동
   };
 
   // 이전 질문으로 이동
   const handlePrev = () => {
-    router.push("/question/q1"); // 첫 번째 질문이면 홈으로 이동
+    router.push("/DetailQuestion/q3"); // ✅ 2번째 질문으로 이동
   };
 
   return (
@@ -38,24 +47,22 @@ export default function SurveyQuestion() {
       />
 
       {/* 질문 박스 */}
-      <div
-        className={styles.questionBox}
-      >{`Q. ${questions[currentQuestion]}`}</div>
+      <div className={styles.questionBox}>{`Q. ${question}`}</div>
 
       {/* 설문 선택 박스 */}
       <div className={styles.surveyBox}>
         <div className={styles.progress}>
-          <span className={styles.currentStep}>2</span> / 5
+          <span className={styles.currentStep}>4</span> / 6
         </div>
 
-        {/* 옵션 선택 */}
+        {/* 옵션 선택 (다중 선택 가능) */}
         {options.map((option, index) => (
           <button
             key={index}
             className={`${styles.option} ${
-              selectedOption === option ? styles.selected : ""
+              selectedOptions.includes(option) ? styles.selected : ""
             }`}
-            onClick={() => setSelectedOption(option)}
+            onClick={() => handleOptionClick(option)}
           >
             {option}
           </button>
@@ -69,7 +76,7 @@ export default function SurveyQuestion() {
           <button
             className={styles.nextButton}
             onClick={handleNext}
-            disabled={!selectedOption}
+            disabled={selectedOptions.length === 0} // ✅ 하나 이상 선택해야 활성화
           >
             다음
           </button>

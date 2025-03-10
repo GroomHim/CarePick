@@ -106,3 +106,31 @@
   font-size: 23px;
   font-weight: 600;
 }
+
+.imageGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* ✅ 2열 정렬 */
+  gap: 5px; /* ✅ 이미지 간격 */
+  justify-items: center;
+}
+
+.imageOption {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.optionImage {
+  width: 230px;
+  height: 200px;
+  object-fit: cover; /* ✅ 이미지 크롭 */
+  border-radius: 10px;
+  border: 2px solid transparent;
+}
+
+/* ✅ 선택된 이미지 강조 */
+.selected .optionImage {
+  border: 3px solid black;
+}
