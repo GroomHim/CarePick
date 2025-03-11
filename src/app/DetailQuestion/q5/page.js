@@ -43,7 +43,7 @@ export default function SurveyQuestion() {
       {/* 설문 선택 박스 */}
       <div className={styles.surveyBox}>
         <div className={styles.progress}>
-          <span className={styles.currentStep}>5</span> / 6
+          <span className={styles.currentStep}>5</span> / 5
         </div>
 
         {/* 옵션 선택 */}

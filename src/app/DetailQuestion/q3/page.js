@@ -17,12 +17,7 @@ export default function SurveyQuestion() {
 
   // ✅ 옵션 선택 / 해제 (토글 방식)
   const handleOptionClick = (option) => {
-    setSelectedOptions(
-      (prevSelected) =>
-        prevSelected.includes(option)
-          ? prevSelected.filter((item) => item !== option) // 이미 선택된 경우 → 제거 (선택 해제)
-          : [...prevSelected, option] // 선택되지 않은 경우 → 추가 (선택)
-    );
+    setSelectedOptions(option);
   };
 
   // ✅ 다음 질문으로 이동
@@ -51,15 +46,15 @@ export default function SurveyQuestion() {
       {/* 설문 선택 박스 */}
       <div className={styles.surveyBox}>
         <div className={styles.progress}>
-          <span className={styles.currentStep}>3</span> / 6
+          <span className={styles.currentStep}>3</span> / 5
         </div>
 
-        {/* 옵션 선택 (다중 선택 가능, 선택 해제 가능) */}
+        {/* 옵션 선택 (단일 선택) */}
         {options.map((option, index) => (
           <button
             key={index}
             className={`${styles.option} ${
-              selectedOptions.includes(option) ? styles.selected : ""
+              selectedOptions === option ? styles.selected : ""
             }`}
             onClick={() => handleOptionClick(option)}
           >

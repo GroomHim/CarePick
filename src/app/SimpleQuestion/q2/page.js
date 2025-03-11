@@ -1,37 +1,23 @@
 "use client";
+import Image from "next/image"; // ✅ Next.js 이미지 최적화
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import styles from "../../../styles/q1.module.css";
 
 export default function SurveyQuestion() {
   const router = useRouter();
-  const question = "다음 중 해당하는 것을 모두 고르세요.";
+  const question = "외출 후 2~3시간 뒤 내 피부 상태는 어떤가요?";
+
+  // ✅ 이미지 파일 경로 설정
   const options = [
-    "어떤 운동이든 운동 후 피부가 붉어지는 편이다.",
-    "화장품을 바르고 가렵거나 따가운적이 있다.",
-    "아토피나 금속, 햇빛 알러지를 앓은 적이 있다.",
-    "얼굴 피부 중에서도 핏줄이 보이는 곳이 있다.",
-    "해당 없음",
+    { id: "photo1", src: "/skin/1.png", alt: "매우 건조하다" },
+    { id: "photo2", src: "/skin/2.png", alt: "약간 건조하다" },
+    { id: "photo3", src: "/skin/3.png", alt: "보통이다" },
+    { id: "photo4", src: "/skin/4.png", alt: "약간 번들거린다" },
+    { id: "photo5", src: "/skin/5.png", alt: "매우 번들거린다" },
   ];
 
-  const [selectedOptions, setSelectedOptions] = useState([]); // 다중 선택 가능하도록 배열로 변경
-
-  const handleOptionClick = (option) => {
-    if (option === "해당 없음") {
-      setSelectedOptions((prevSelected) =>
-        prevSelected.includes(option) ? [] : [option]
-      );
-    } else {
-      setSelectedOptions(
-        (prevSelected) =>
-          prevSelected.includes("해당 없음")
-            ? [option] // 해당 없음 선택되어 있으면 다른 옵션만 선택
-            : prevSelected.includes(option)
-            ? prevSelected.filter((item) => item !== option) // 선택 해제
-            : [...prevSelected, option] // 새 옵션 추가
-      );
-    }
-  };
+  const [selectedOption, setSelectedOption] = useState(null);
 
   // ✅ 다음 질문으로 이동
   const handleNext = () => {
@@ -59,24 +45,29 @@ export default function SurveyQuestion() {
       {/* 설문 선택 박스 */}
       <div className={styles.surveyBox}>
         <div className={styles.progress}>
-          <span className={styles.currentStep}>2</span> / 5
+          <span className={styles.currentStep}>2</span> / 6
         </div>
 
-        {/* 옵션 선택 (다중 선택 가능, 선택 해제 가능) */}
-        {options.map((option, index) => (
-          <button
-            key={index}
-            className={`${styles.option} ${
-              selectedOptions.includes(option) ? styles.selected : ""
-            }`}
-            onClick={() => handleOptionClick(option)}
-            disabled={
-              selectedOptions.includes("해당 없음") && option !== "해당 없음"
-            }
-          >
-            {option}
-          </button>
-        ))}
+        {/* 이미지 버튼 선택 */}
+        <div className={styles.imageGrid}>
+          {options.map((option) => (
+            <button
+              key={option.id}
+              className={`${styles.imageOption} ${
+                selectedOption === option.id ? styles.selected : ""
+              }`}
+              onClick={() => setSelectedOption(option.id)}
+            >
+              <Image
+                src={option.src}
+                alt={option.alt}
+                width={200} // ✅ 원하는 크기로 조절
+                height={200}
+                className={styles.optionImage}
+              />
+            </button>
+          ))}
+        </div>
 
         {/* 이전 / 다음 버튼 */}
         <div className={styles.buttonContainer}>
@@ -86,7 +77,7 @@ export default function SurveyQuestion() {
           <button
             className={styles.nextButton}
             onClick={handleNext}
-            disabled={selectedOptions.length === 0} //하나 이상 선택해야 "다음" 버튼 활성화
+            disabled={!selectedOption}
           >
             다음
           </button>

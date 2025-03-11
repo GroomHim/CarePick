@@ -5,24 +5,45 @@ import styles from "../../../styles/q1.module.css";
 
 export default function SurveyQuestion() {
   const router = useRouter();
-  const questions = ["나의 야외 활동 정도는?"];
-  const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [selectedOption, setSelectedOption] = useState(null);
-
+  const question = "다음 중 해당하는 것을 모두 고르세요.";
   const options = [
-    "활동 대부분을 바깥에서 진행 (운동, 노등)",
-    "절반 정도를 바깥에서 진행",
-    "이동시간 외에는 실내에서 진행",
+    "햇빛에 타면 빨개지기 보다 깨어진다.",
+    "여드름 자국이 갈색으로 변한다.",
+    "햇빛을 받으면 주근깨가 생긴다.",
+    "피부가 전체적으로 얼룩덜룩 하다.",
+    "해당 없음",
   ];
+
+  const [selectedOptions, setSelectedOptions] = useState([]); // ✅ 다중 선택 가능하도록 배열로 변경
+
+  /// ✅ 옵션 선택 (토글 방식)
+  const handleOptionClick = (option) => {
+    if (option === "해당 없음") {
+      // ✅ "해당 없음"을 선택하면 다른 옵션을 모두 해제하고 해당 없음만 선택
+      setSelectedOptions((prevSelected) =>
+        prevSelected.includes(option) ? [] : [option]
+      );
+    } else {
+      // ✅ 다른 옵션을 선택하면 "해당 없음"이 자동으로 해제됨
+      setSelectedOptions(
+        (prevSelected) =>
+          prevSelected.includes("해당 없음")
+            ? [option] // "해당 없음"이 선택되어 있으면, 선택한 옵션만 남김
+            : prevSelected.includes(option)
+            ? prevSelected.filter((item) => item !== option) // 선택 해제
+            : [...prevSelected, option] // 선택 추가
+      );
+    }
+  };
 
   // 다음 질문으로 이동
   const handleNext = () => {
-    router.push("/SimpleQuestion/q5"); // 완료 후 메인 화면으로 이동
+    router.push("/SimpleQuestion/q5"); // ✅ 4번째 질문으로 이동
   };
 
   // 이전 질문으로 이동
   const handlePrev = () => {
-    router.push("/SimpleQuestion/q3"); // 첫 번째 질문이면 홈으로 이동
+    router.push("/SimpleQuestion/q3"); // ✅ 2번째 질문으로 이동
   };
 
   return (
@@ -36,24 +57,25 @@ export default function SurveyQuestion() {
       />
 
       {/* 질문 박스 */}
-      <div
-        className={styles.questionBox}
-      >{`Q. ${questions[currentQuestion]}`}</div>
+      <div className={styles.questionBox}>{`Q. ${question}`}</div>
 
       {/* 설문 선택 박스 */}
       <div className={styles.surveyBox}>
         <div className={styles.progress}>
-          <span className={styles.currentStep}>4</span> / 5
+          <span className={styles.currentStep}>4</span> / 6
         </div>
 
-        {/* 옵션 선택 */}
+        {/* 옵션 선택 (다중 선택 가능, 선택 해제 가능) */}
         {options.map((option, index) => (
           <button
             key={index}
             className={`${styles.option} ${
-              selectedOption === option ? styles.selected : ""
+              selectedOptions.includes(option) ? styles.selected : ""
             }`}
-            onClick={() => setSelectedOption(option)}
+            onClick={() => handleOptionClick(option)}
+            disabled={
+              selectedOptions.includes("해당 없음") && option !== "해당 없음"
+            }
           >
             {option}
           </button>
@@ -67,7 +89,7 @@ export default function SurveyQuestion() {
           <button
             className={styles.nextButton}
             onClick={handleNext}
-            disabled={!selectedOption}
+            disabled={selectedOptions.length === 0} // ✅ 하나 이상 선택해야 활성화
           >
             다음
           </button>
