@@ -5,13 +5,12 @@ import styles from "../../../styles/q1.module.css";
 
 export default function SurveyQuestion() {
   const router = useRouter();
-  const question = "다음 중 해당하는 것을 모두 고르세요.";
+  const question = "하루 평균 스킨케어 제품을 바르는 횟수는?";
   const options = [
-    "햇빛에 타면 빨개지기 보다 깨어진다.",
-    "여드름 자국이 갈색으로 변한다.",
-    "햇빛을 받으면 주근깨가 생긴다.",
-    "피부가 전체적으로 얼룩덜룩 하다.",
-    "해당 없음",
+    "전혀 사용하지 않는다.",
+    "하루 1회 사용한다.",
+    "하루 2~3회 사용한다.",
+    "하루 4회 이상 사용한다.",
   ];
 
   const [selectedOptions, setSelectedOptions] = useState([]); // ✅ 다중 선택 가능하도록 배열로 변경

@@ -10,11 +10,11 @@ export default function SurveyQuestion() {
 
   // ✅ 이미지 파일 경로 설정
   const options = [
-    { id: "photo1", src: "/skin/1.png", alt: "사진1" },
-    { id: "photo2", src: "/skin/2.png", alt: "사진2" },
-    { id: "photo3", src: "/skin/3.png", alt: "사진3" },
-    { id: "photo4", src: "/skin/4.png", alt: "사진4" },
-    { id: "photo5", src: "/skin/5.png", alt: "사진5" },
+    { id: "photo1", src: "/skin/1.png", alt: "매우 건조하다" },
+    { id: "photo2", src: "/skin/2.png", alt: "약간 건조하다" },
+    { id: "photo3", src: "/skin/3.png", alt: "보통이다" },
+    { id: "photo4", src: "/skin/4.png", alt: "약간 번들거린다" },
+    { id: "photo5", src: "/skin/5.png", alt: "매우 번들거린다" },
   ];
 
   const [selectedOption, setSelectedOption] = useState(null);
