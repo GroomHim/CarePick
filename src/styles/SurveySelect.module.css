@@ -43,6 +43,18 @@
   margin-bottom: 40px;
 }
 
+/* 에러 메시지 스타일 */
+.errorMessage {
+  color: #ff3333;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #ffeeee;
+  border-radius: 5px;
+  border: 1px solid #ffcccc;
+}
+
 /* 버튼 컨테이너 */
 .buttonContainer {
   display: flex;
@@ -68,6 +80,13 @@
   border: none;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
+}
+
+/* 버튼 비활성화 스타일 */
+.button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  background-color: #e0e0e0;
 }
 
 /* 선택된 버튼 스타일 */
