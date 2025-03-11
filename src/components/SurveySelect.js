@@ -2,6 +2,7 @@
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import styles from "../styles/SurveySelect.module.css";
+import api from "@/lib/api";
 
 export default function SurveySelect() {
   const [selectedSurvey, setSelectedSurvey] = useState("");
@@ -11,29 +12,17 @@ export default function SurveySelect() {
 
   // 설문 타입을 API로 저장하는 함수
   const saveSurveyTypeToDatabase = async (surveyType) => {
+    setIsLoading(true);
+    setError(null);
+    
     try {
-      setIsLoading(true);
-      setError(null);
-      
-      const response = await fetch('/api/survey', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ surveyType }),
-      });
-      
-      const data = await response.json();
-      
-      if (!response.ok) {
-        throw new Error(data.error || '설문 타입 저장 중 오류가 발생했습니다.');
-      }
-      
-      console.log('설문 타입 저장 성공:', data);
-      return data;
+      // 인터셉터에서 에러 처리
+      const response = await api.post('/api/survey', { surveyType });
+      return response.data;
     } catch (error) {
-      console.error('설문 타입 저장 실패:', error);
-      setError(error.message);
+      // UI에 표시하기 위한 error 캐치 
+      const errorMessage = error.response?.data?.error || error.message || '설문 타입 저장 중 오류가 발생했습니다.';
+      setError(errorMessage);
       return null;
     } finally {
       setIsLoading(false);
