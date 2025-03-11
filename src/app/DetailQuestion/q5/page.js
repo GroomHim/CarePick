@@ -5,19 +5,19 @@ import styles from "../../../styles/q1.module.css";
 
 export default function SurveyQuestion() {
   const router = useRouter();
-  const questions = ["나의 야외 활동 정도는?"];
+  const questions = ["여행할 때 피부 상태가 달라지는 걸 느낀 적이 있나요?"];
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedOption, setSelectedOption] = useState(null);
 
   const options = [
-    "활동 대부분을 바깥에서 진행 (운동, 노등)",
-    "절반 정도를 바깥에서 진행",
-    "이동시간 외에는 실내에서 진행",
+    "평소보다 건조해진다.",
+    "평소보다 기름져진다.",
+    "변화 없다.",
   ];
 
   // 다음 질문으로 이동
   const handleNext = () => {
-    router.push("/DetailQuestion/q6"); // 완료 후 메인 화면으로 이동
+    router.push("/loading"); // 완료 후 메인 화면으로 이동
   };
 
   // 이전 질문으로 이동
@@ -43,7 +43,7 @@ export default function SurveyQuestion() {
       {/* 설문 선택 박스 */}
       <div className={styles.surveyBox}>
         <div className={styles.progress}>
-          <span className={styles.currentStep}>5</span> / 6
+          <span className={styles.currentStep}>5</span> / 5
         </div>
 
         {/* 옵션 선택 */}

@@ -1,39 +1,28 @@
 "use client";
-import styles from "@/styles/q1.module.css";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import styles from "../../../styles/q1.module.css";
 
-export default function Question5() {
+export default function SurveyQuestion() {
   const router = useRouter();
-  const question = "다음 중 해당하는 것을 모두 고르세요.";
+  const questions = ["나의 야외 활동 정도는?"];
+  const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [selectedOption, setSelectedOption] = useState(null);
+
   const options = [
-    "좁쌀 여드름",
-    "화농성 여드름",
-    "건조한 입술",
-    "면도 후 염증",
-    "모공",
-    "주름",
-    "잡티",
-    "해당 없음",
+    "활동 대부분을 바깥에서 진행 (운동, 노등)",
+    "절반 정도를 바깥에서 진행",
+    "이동시간 외에는 실내에서 진행",
   ];
 
-  const [selectedOptions, setSelectedOptions] = useState([]);
-
-  const handleOptionClick = (option) => {
-    setSelectedOptions(
-      (prevSelected) =>
-        prevSelected.includes(option)
-          ? prevSelected.filter((item) => item !== option) // 선택 해제
-          : [...prevSelected, option] // 선택 추가
-    );
-  };
-
+  // 다음 질문으로 이동
   const handleNext = () => {
-    router.push("/loading"); // ✅ 결과 페이지로 이동
+    router.push("/SimpleQuestion/q6"); // 완료 후 메인 화면으로 이동
   };
 
+  // 이전 질문으로 이동
   const handlePrev = () => {
-    router.push("/SimpleQuestion/q4"); // ✅ 4번째 질문으로 이동
+    router.push("/SimpleQuestion/q4"); // 첫 번째 질문이면 홈으로 이동
   };
 
   return (
@@ -47,28 +36,28 @@ export default function Question5() {
       />
 
       {/* 질문 박스 */}
-      <div className={styles.questionBox}>{`Q. ${question}`}</div>
+      <div
+        className={styles.questionBox}
+      >{`Q. ${questions[currentQuestion]}`}</div>
 
       {/* 설문 선택 박스 */}
       <div className={styles.surveyBox}>
         <div className={styles.progress}>
-          <span className={styles.currentStep}>5</span> / 5
+          <span className={styles.currentStep}>5</span> / 6
         </div>
 
-        {/* 2열 버튼 그리드 배치 */}
-        <div className={styles.optionsGrid}>
-          {options.map((option, index) => (
-            <button
-              key={index}
-              className={`${styles.option} ${
-                selectedOptions.includes(option) ? styles.selected : ""
-              }`}
-              onClick={() => handleOptionClick(option)}
-            >
-              {option}
-            </button>
-          ))}
-        </div>
+        {/* 옵션 선택 */}
+        {options.map((option, index) => (
+          <button
+            key={index}
+            className={`${styles.option} ${
+              selectedOption === option ? styles.selected : ""
+            }`}
+            onClick={() => setSelectedOption(option)}
+          >
+            {option}
+          </button>
+        ))}
 
         {/* 이전 / 다음 버튼 */}
         <div className={styles.buttonContainer}>
@@ -78,7 +67,7 @@ export default function Question5() {
           <button
             className={styles.nextButton}
             onClick={handleNext}
-            disabled={selectedOptions.length === 0}
+            disabled={!selectedOption}
           >
             다음
           </button>

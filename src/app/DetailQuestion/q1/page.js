@@ -5,16 +5,18 @@ import styles from "../../../styles/q1.module.css";
 
 export default function SurveyQuestion() {
   const router = useRouter();
-  const questions = ["비누로 세수해도 당김이 없나요?"];
+  const questions = [
+    "세안 후 아무것도 바르지 않고 2~3시간 후, 피부가 어떻게 느껴지나요?",
+  ];
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedOption, setSelectedOption] = useState(null);
 
   const options = [
-    "전혀 아니다",
-    "아닌 쪽에 가깝다",
-    "그저 그렇다",
-    "그런 편이다",
-    "매우 그렇다",
+    "당김이 심하다",
+    "약간 당긴다",
+    "보통이다",
+    "약간 기름지다",
+    "피부가 많이 번들거린다",
   ];
   // 다음 질문으로 이동
   const handleNext = () => {
@@ -49,7 +51,7 @@ export default function SurveyQuestion() {
       {/* 설문 선택 박스 */}
       <div className={styles.surveyBox}>
         <div className={styles.progress}>
-          <span className={styles.currentStep}>1</span> / 6
+          <span className={styles.currentStep}>1</span> / 5
         </div>
 
         {/* 옵션 선택 */}

@@ -5,25 +5,19 @@ import styles from "../../../styles/q1.module.css";
 
 export default function SurveyQuestion() {
   const router = useRouter();
-  const question = "다음 중 해당하는 것을 모두 고르세요.";
+  const question = "얼굴의 모공 상태와 가장 가까운 표현은?";
   const options = [
-    "어떤 운동이든 운동 후 피부가 붉어지는 편이다.",
-    "화장품을 바르고 가렵거나 따가운적이 있다.",
-    "아토피나 금속, 햇빛 알러지를 앓은 적이 있다.",
-    "얼굴 피부 중에서도 핏줄이 보이는 곳이 있다.",
-    "해당 없음",
+    "가까이서 보면 작게 보이지만, 멀리서는 거의 안 보인다.",
+    "코와 볼 주변에 약간의 모공이 보인다.",
+    "코와 볼 주변에 모공이 뚜렷하게 보이고, 피부가 거칠다.",
+    "얼굴 전체적으로 모공이 넓거나 깊게 보인다.",
   ];
 
   const [selectedOptions, setSelectedOptions] = useState([]); // 다중 선택 가능하도록 배열로 변경
 
   // ✅ 옵션 선택 / 해제 (토글 방식)
   const handleOptionClick = (option) => {
-    setSelectedOptions(
-      (prevSelected) =>
-        prevSelected.includes(option)
-          ? prevSelected.filter((item) => item !== option) // 이미 선택된 경우 → 제거 (선택 해제)
-          : [...prevSelected, option] // 선택되지 않은 경우 → 추가 (선택)
-    );
+    setSelectedOptions(option);
   };
 
   // ✅ 다음 질문으로 이동
@@ -52,15 +46,15 @@ export default function SurveyQuestion() {
       {/* 설문 선택 박스 */}
       <div className={styles.surveyBox}>
         <div className={styles.progress}>
-          <span className={styles.currentStep}>3</span> / 6
+          <span className={styles.currentStep}>3</span> / 5
         </div>
 
-        {/* 옵션 선택 (다중 선택 가능, 선택 해제 가능) */}
+        {/* 옵션 선택 (단일 선택) */}
         {options.map((option, index) => (
           <button
             key={index}
             className={`${styles.option} ${
-              selectedOptions.includes(option) ? styles.selected : ""
+              selectedOptions === option ? styles.selected : ""
             }`}
             onClick={() => handleOptionClick(option)}
           >
