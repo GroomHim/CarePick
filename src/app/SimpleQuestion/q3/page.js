@@ -1,6 +1,6 @@
 "use client";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "../../../styles/q1.module.css";
 
 export default function SurveyQuestion() {
@@ -16,25 +16,43 @@ export default function SurveyQuestion() {
 
   const [selectedOptions, setSelectedOptions] = useState([]); // 다중 선택 가능하도록 배열로 변경
 
+  // 저장된 선택값 불러오기 (localStorage에서 유지)
+  useEffect(() => {
+    const storedAnswer = JSON.parse(localStorage.getItem("Q3")) || [];
+    setSelectedOptions(storedAnswer);
+  }, []);
+
+  // 선택 시 `localStorage`에 저장
   const handleOptionClick = (option) => {
+    let newSelection = [];
+
     if (option === "해당 없음") {
-      setSelectedOptions((prevSelected) =>
-        prevSelected.includes(option) ? [] : [option]
-      );
+      newSelection = selectedOptions.includes(option) ? [] : [option];
     } else {
-      setSelectedOptions(
-        (prevSelected) =>
-          prevSelected.includes("해당 없음")
-            ? [option] // 해당 없음 선택되어 있으면 다른 옵션만 선택
-            : prevSelected.includes(option)
-            ? prevSelected.filter((item) => item !== option) // 선택 해제
-            : [...prevSelected, option] // 새 옵션 추가
-      );
+      newSelection = selectedOptions.includes("해당 없음")
+        ? [option]
+        : selectedOptions.includes(option)
+        ? selectedOptions.filter((item) => item !== option)
+        : [...selectedOptions, option];
     }
+
+    setSelectedOptions(newSelection);
+    localStorage.setItem("Q3", JSON.stringify(newSelection));
   };
 
-  // ✅ 다음 질문으로 이동
+  // ✅ 예민도 점수 계산 후 저장
   const handleNext = () => {
+    let sensitivityScore = 0;
+
+    if (selectedOptions.includes("해당 없음") || selectedOptions.length <= 2) {
+      sensitivityScore = 0; // 예민X
+    } else {
+      sensitivityScore = 1; // 예민O
+    }
+
+    localStorage.setItem("sensitivity", sensitivityScore);
+    console.log("예민도:", sensitivityScore);
+
     router.push("/SimpleQuestion/q4");
   };
 
@@ -74,7 +92,7 @@ export default function SurveyQuestion() {
               selectedOptions.includes("해당 없음") && option !== "해당 없음"
             }
           >
-            {option}
+            {option.label}
           </button>
         ))}
 

@@ -1,33 +1,43 @@
 "use client";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "../../../styles/q1.module.css";
 
 export default function SurveyQuestion() {
   const router = useRouter();
   const question = "하루 평균 스킨케어 제품을 바르는 횟수는?";
+
   const options = [
-    "전혀 사용하지 않는다.",
-    "하루 1회 사용한다.",
-    "하루 2~3회 사용한다.",
-    "하루 4회 이상 사용한다.",
+    { label: "전혀 사용하지 않는다.", value: 3 },
+    { label: "하루 1회 사용한다.", value: 1 },
+    { label: "하루 2~3회 사용한다.", value: 0 },
+    { label: "하루 4회 이상 사용한다.", value: -1 },
   ];
 
-  const [selectedOptions, setSelectedOptions] = useState([]); // ✅ 다중 선택 가능하도록 배열로 변경
+  const [selectedOption, setSelectedOption] = useState(null);
 
-  /// 옵션 선택 (토글 방식)
-  const handleOptionClick = (option) => {
-    setSelectedOptions(option);
+  // ✅ 저장된 선택값 불러오기 (localStorage에서 유지)
+  useEffect(() => {
+    const storedAnswer = localStorage.getItem("Q4");
+    if (storedAnswer) {
+      setSelectedOption(parseInt(storedAnswer)); // 🔥 기존 선택 유지
+    }
+  }, []);
+
+  // ✅ 선택 시 `localStorage`에 저장
+  const handleOptionSelect = (value) => {
+    setSelectedOption(value);
+    localStorage.setItem("Q4", value); // 🔥 점수를 localStorage에 저장
   };
 
-  // 다음 질문으로 이동
+  // ✅ 다음 질문으로 이동
   const handleNext = () => {
-    router.push("/DetailQuestion/q5"); // ✅ 4번째 질문으로 이동
+    router.push("/DetailQuestion/q5");
   };
 
-  // 이전 질문으로 이동
+  // ✅ 이전 질문으로 이동
   const handlePrev = () => {
-    router.push("/DetailQuestion/q3"); // ✅ 2번째 질문으로 이동
+    router.push("/DetailQuestion/q3");
   };
 
   return (
@@ -49,16 +59,16 @@ export default function SurveyQuestion() {
           <span className={styles.currentStep}>4</span> / 5
         </div>
 
-        {/* 옵션 선택 (다중 선택 가능) */}
-        {options.map((option, index) => (
+        {/* 옵션 선택 (단일 선택) */}
+        {options.map((option) => (
           <button
-            key={index}
+            key={option.value}
             className={`${styles.option} ${
-              selectedOptions.includes(option) ? styles.selected : ""
+              selectedOption === option.value ? styles.selected : ""
             }`}
-            onClick={() => handleOptionClick(option)}
+            onClick={() => handleOptionSelect(option.value)}
           >
-            {option}
+            {option.label}
           </button>
         ))}
 
@@ -70,7 +80,7 @@ export default function SurveyQuestion() {
           <button
             className={styles.nextButton}
             onClick={handleNext}
-            disabled={selectedOptions.length === 0} // ✅ 하나 이상 선택해야 활성화
+            disabled={selectedOption === null} // 🔥 선택하지 않으면 "다음" 버튼 비활성화
           >
             다음
           </button>

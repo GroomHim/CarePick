@@ -1,6 +1,6 @@
 "use client";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "../../../styles/q1.module.css";
 
 export default function SurveyQuestion() {
@@ -9,17 +9,31 @@ export default function SurveyQuestion() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedOption, setSelectedOption] = useState(null);
 
+  //야외활동 점수는 피부 타입 계산에는 포함되지 않지만 저장은 함.
   const options = [
-    "활동 대부분을 바깥에서 진행 (운동, 노등)",
-    "절반 정도를 바깥에서 진행",
-    "이동시간 외에는 실내에서 진행",
+    { label: "활동 대부분을 바깥에서 진행 (운동, 노동)", value: 3 },
+    { label: "절반 정도를 바깥에서 진행", value: 2 },
+    { label: "이동시간 외에는 실내에서 진행", value: 1 },
   ];
+  // ✅ 저장된 선택값 불러오기 (localStorage에서 유지)
+  useEffect(() => {
+    const storedAnswer = localStorage.getItem("Q5");
+    if (storedAnswer) {
+      setSelectedOption(parseInt(storedAnswer)); // 🔥 기존 선택 유지
+    }
+  }, []);
 
-  // 다음 질문으로 이동
-  const handleNext = () => {
-    router.push("/SimpleQuestion/q6"); // 완료 후 메인 화면으로 이동
+  // ✅ 선택 시 `localStorage`에 저장
+  const handleOptionSelect = (value) => {
+    setSelectedOption(value);
+    localStorage.setItem("Q5", value); // 🔥 선택값 저장
   };
 
+  // ✅ 다음 질문으로 이동
+  const handleNext = () => {
+    console.log("야외 활동 정도:", selectedOption);
+    router.push("/SimpleQuestion/q6");
+  };
   // 이전 질문으로 이동
   const handlePrev = () => {
     router.push("/SimpleQuestion/q4"); // 첫 번째 질문이면 홈으로 이동
@@ -53,9 +67,9 @@ export default function SurveyQuestion() {
             className={`${styles.option} ${
               selectedOption === option ? styles.selected : ""
             }`}
-            onClick={() => setSelectedOption(option)}
+            onClick={() => handleOptionSelect(option.value)}
           >
-            {option}
+            {option.label}
           </button>
         ))}
 

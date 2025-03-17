@@ -1,6 +1,6 @@
 "use client";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "../../../styles/q1.module.css";
 
 export default function SurveyQuestion() {
@@ -9,13 +9,28 @@ export default function SurveyQuestion() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedOption, setSelectedOption] = useState(null);
 
+  // 선택 옵션과 점수 매핑
   const options = [
-    "전혀 아니다",
-    "아닌 쪽에 가깝다",
-    "그저 그렇다",
-    "그런 편이다",
-    "매우 그렇다",
+    { label: "전혀 아니다", value: 1 },
+    { label: "아닌 쪽에 가깝다", value: 2 },
+    { label: "그저 그렇다", value: 3 },
+    { label: "그런 편이다", value: 4 },
+    { label: "매우 그렇다", value: 5 },
   ];
+  // 저장된 선택값 불러오기
+  useEffect(() => {
+    const storedAnswer = localStorage.getItem("Q1");
+    if (storedAnswer) {
+      setSelectedOption(parseInt(storedAnswer)); // 🔥 기존 선택 유지
+    }
+  }, []);
+
+  // 선택값을 `localStorage`에 저장
+  const handleOptionSelect = (value) => {
+    setSelectedOption(value);
+    localStorage.setItem("Q1", value); // 🔥 점수를 localStorage에 저장
+  };
+
   // 다음 질문으로 이동
   const handleNext = () => {
     router.push("/SimpleQuestion/q2"); // 완료 후 메인 화면으로 이동
@@ -57,11 +72,11 @@ export default function SurveyQuestion() {
           <button
             key={index}
             className={`${styles.option} ${
-              selectedOption === option ? styles.selected : ""
+              selectedOption === option.value ? styles.selected : ""
             }`}
-            onClick={() => setSelectedOption(option)}
+            onClick={() => handleOptionSelect(option.value)}
           >
-            {option}
+            {option.label}
           </button>
         ))}
 

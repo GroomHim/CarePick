@@ -1,23 +1,38 @@
 "use client";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "../../../styles/q1.module.css";
 
 export default function SurveyQuestion() {
   const router = useRouter();
   const question = "얼굴의 모공 상태와 가장 가까운 표현은?";
   const options = [
-    "가까이서 보면 작게 보이지만, 멀리서는 거의 안 보인다.",
-    "코와 볼 주변에 약간의 모공이 보인다.",
-    "코와 볼 주변에 모공이 뚜렷하게 보이고, 피부가 거칠다.",
-    "얼굴 전체적으로 모공이 넓거나 깊게 보인다.",
+    {
+      label: "가까이서 보면 작게 보이지만, 멀리서는 거의 안 보인다.",
+      value: 1,
+    },
+    { label: "코와 볼 주변에 약간의 모공이 보인다.", value: 3 },
+    {
+      label: "코와 볼 주변에 모공이 뚜렷하게 보이고, 피부가 거칠다.",
+      value: 4,
+    },
+    { label: "얼굴 전체적으로 모공이 넓거나 깊게 보인다.", value: 5 },
   ];
 
-  const [selectedOptions, setSelectedOptions] = useState([]); // 다중 선택 가능하도록 배열로 변경
+  const [selectedOption, setSelectedOption] = useState(null);
 
-  // ✅ 옵션 선택 / 해제 (토글 방식)
-  const handleOptionClick = (option) => {
-    setSelectedOptions(option);
+  // ✅ 저장된 선택값 불러오기 (localStorage에서 유지)
+  useEffect(() => {
+    const storedAnswer = localStorage.getItem("Q3");
+    if (storedAnswer) {
+      setSelectedOption(parseInt(storedAnswer)); // 🔥 기존 선택 유지
+    }
+  }, []);
+
+  // ✅ 선택 시 `localStorage`에 저장
+  const handleOptionSelect = (value) => {
+    setSelectedOption(value);
+    localStorage.setItem("Q3", value); // 🔥 점수를 localStorage에 저장
   };
 
   // ✅ 다음 질문으로 이동
@@ -50,15 +65,15 @@ export default function SurveyQuestion() {
         </div>
 
         {/* 옵션 선택 (단일 선택) */}
-        {options.map((option, index) => (
+        {options.map((option) => (
           <button
-            key={index}
+            key={option.value}
             className={`${styles.option} ${
-              selectedOptions === option ? styles.selected : ""
+              selectedOption === option.value ? styles.selected : ""
             }`}
-            onClick={() => handleOptionClick(option)}
+            onClick={() => handleOptionSelect(option.value)}
           >
-            {option}
+            {option.label}
           </button>
         ))}
 
@@ -70,7 +85,7 @@ export default function SurveyQuestion() {
           <button
             className={styles.nextButton}
             onClick={handleNext}
-            disabled={selectedOptions.length === 0} //하나 이상 선택해야 "다음" 버튼 활성화
+            disabled={selectedOption === null} // 🔥 선택하지 않으면 "다음" 버튼 비활성화
           >
             다음
           </button>

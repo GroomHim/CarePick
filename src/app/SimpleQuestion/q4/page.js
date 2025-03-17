@@ -1,6 +1,6 @@
 "use client";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "../../../styles/q1.module.css";
 
 export default function SurveyQuestion() {
@@ -14,36 +14,51 @@ export default function SurveyQuestion() {
     "해당 없음",
   ];
 
-  const [selectedOptions, setSelectedOptions] = useState([]); // ✅ 다중 선택 가능하도록 배열로 변경
+  const [selectedOptions, setSelectedOptions] = useState([]); // 다중 선택 가능하도록 배열로 변경
 
-  /// ✅ 옵션 선택 (토글 방식)
+  // 저장된 선택값 불러오기 (localStorage에서 유지)
+  useEffect(() => {
+    const storedAnswer = JSON.parse(localStorage.getItem("Q4")) || [];
+    setSelectedOptions(storedAnswer);
+  }, []);
+
+  // 선택 시 `localStorage`에 저장
   const handleOptionClick = (option) => {
+    let newSelection = [];
+
     if (option === "해당 없음") {
-      // ✅ "해당 없음"을 선택하면 다른 옵션을 모두 해제하고 해당 없음만 선택
-      setSelectedOptions((prevSelected) =>
-        prevSelected.includes(option) ? [] : [option]
-      );
+      newSelection = selectedOptions.includes(option) ? [] : [option];
     } else {
-      // ✅ 다른 옵션을 선택하면 "해당 없음"이 자동으로 해제됨
-      setSelectedOptions(
-        (prevSelected) =>
-          prevSelected.includes("해당 없음")
-            ? [option] // "해당 없음"이 선택되어 있으면, 선택한 옵션만 남김
-            : prevSelected.includes(option)
-            ? prevSelected.filter((item) => item !== option) // 선택 해제
-            : [...prevSelected, option] // 선택 추가
-      );
+      newSelection = selectedOptions.includes("해당 없음")
+        ? [option]
+        : selectedOptions.includes(option)
+        ? selectedOptions.filter((item) => item !== option)
+        : [...selectedOptions, option];
     }
+
+    setSelectedOptions(newSelection);
+    localStorage.setItem("Q4", JSON.stringify(newSelection));
   };
 
-  // 다음 질문으로 이동
+  // 착색도 점수 계산 후 저장
   const handleNext = () => {
-    router.push("/SimpleQuestion/q5"); // ✅ 4번째 질문으로 이동
+    let pigmentationScore = 0;
+
+    if (selectedOptions.includes("해당 없음") || selectedOptions.length <= 2) {
+      pigmentationScore = 0; // 착색 X
+    } else {
+      pigmentationScore = 1; // 착색 O
+    }
+
+    localStorage.setItem("pigmentation", pigmentationScore);
+    console.log("착색도:", pigmentationScore);
+
+    router.push("/SimpleQuestion/q5");
   };
 
   // 이전 질문으로 이동
   const handlePrev = () => {
-    router.push("/SimpleQuestion/q3"); // ✅ 2번째 질문으로 이동
+    router.push("/SimpleQuestion/q3"); // 2번째 질문으로 이동
   };
 
   return (
@@ -77,7 +92,7 @@ export default function SurveyQuestion() {
               selectedOptions.includes("해당 없음") && option !== "해당 없음"
             }
           >
-            {option}
+            {option.label}
           </button>
         ))}
 

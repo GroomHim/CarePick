@@ -1,36 +1,44 @@
 "use client";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "../../../styles/q1.module.css";
 
 export default function SurveyQuestion() {
   const router = useRouter();
-  const questions = [
-    "세안 후 아무것도 바르지 않고 2~3시간 후, 피부가 어떻게 느껴지나요?",
+  const question =
+    "세안 후 아무것도 바르지 않고 2~3시간 후, 피부가 어떻게 느껴지나요?";
+  const options = [
+    { label: "당김이 심하다", value: 1 },
+    { label: "약간 당긴다", value: 2 },
+    { label: "보통이다", value: 3 },
+    { label: "약간 기름지다", value: 4 },
+    { label: "피부가 많이 번들거린다", value: 5 },
   ];
-  const [currentQuestion, setCurrentQuestion] = useState(0);
+
   const [selectedOption, setSelectedOption] = useState(null);
 
-  const options = [
-    "당김이 심하다",
-    "약간 당긴다",
-    "보통이다",
-    "약간 기름지다",
-    "피부가 많이 번들거린다",
-  ];
-  // 다음 질문으로 이동
-  const handleNext = () => {
-    router.push("/DetailQuestion/q2"); // 완료 후 메인 화면으로 이동
+  // ✅ 저장된 선택값 불러오기
+  useEffect(() => {
+    const storedAnswer = localStorage.getItem("Q1");
+    if (storedAnswer) {
+      setSelectedOption(parseInt(storedAnswer));
+    }
+  }, []);
+
+  // ✅ 선택값을 `localStorage`에 저장
+  const handleOptionSelect = (value) => {
+    setSelectedOption(value);
+    localStorage.setItem("Q1", value);
   };
 
-  // 이전 질문으로 이동
+  // ✅ 다음 질문으로 이동
+  const handleNext = () => {
+    router.push("/DetailQuestion/q2");
+  };
+
+  // ✅ 이전 질문으로 이동
   const handlePrev = () => {
-    if (currentQuestion > 0) {
-      setCurrentQuestion(currentQuestion - 1);
-      setSelectedOption(null); // 이전 질문으로 이동하면 선택 초기화
-    } else {
-      router.push("/"); // 첫 번째 질문이면 홈으로 이동
-    }
+    router.push("/");
   };
 
   return (
@@ -44,9 +52,7 @@ export default function SurveyQuestion() {
       />
 
       {/* 질문 박스 */}
-      <div
-        className={styles.questionBox}
-      >{`Q. ${questions[currentQuestion]}`}</div>
+      <div className={styles.questionBox}>{`Q. ${question}`}</div>
 
       {/* 설문 선택 박스 */}
       <div className={styles.surveyBox}>
@@ -55,15 +61,15 @@ export default function SurveyQuestion() {
         </div>
 
         {/* 옵션 선택 */}
-        {options.map((option, index) => (
+        {options.map((option) => (
           <button
-            key={index}
+            key={option.value}
             className={`${styles.option} ${
-              selectedOption === option ? styles.selected : ""
+              selectedOption === option.value ? styles.selected : ""
             }`}
-            onClick={() => setSelectedOption(option)}
+            onClick={() => handleOptionSelect(option.value)}
           >
-            {option}
+            {option.label}
           </button>
         ))}
 
@@ -75,7 +81,7 @@ export default function SurveyQuestion() {
           <button
             className={styles.nextButton}
             onClick={handleNext}
-            disabled={!selectedOption}
+            disabled={selectedOption === null}
           >
             다음
           </button>
