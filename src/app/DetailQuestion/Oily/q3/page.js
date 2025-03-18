@@ -21,26 +21,26 @@ export default function SurveyQuestion() {
 
   const [selectedOption, setSelectedOption] = useState(null);
 
-  // ✅ 저장된 선택값 불러오기 (localStorage에서 유지)
+  // 저장된 선택값 불러오기 (localStorage에서 유지)
   useEffect(() => {
     const storedAnswer = localStorage.getItem("Q3");
     if (storedAnswer) {
-      setSelectedOption(parseInt(storedAnswer)); // 🔥 기존 선택 유지
+      setSelectedOption(parseInt(storedAnswer)); // 기존 선택 유지
     }
   }, []);
 
-  // ✅ 선택 시 `localStorage`에 저장
+  // 선택 시 `localStorage`에 저장
   const handleOptionSelect = (value) => {
     setSelectedOption(value);
     localStorage.setItem("Q3", value); // 🔥 점수를 localStorage에 저장
   };
 
-  // ✅ 다음 질문으로 이동
+  // 다음 질문으로 이동
   const handleNext = () => {
     router.push("/DetailQuestion/Oily/q4");
   };
 
-  // ✅ 이전 질문으로 이동
+  // 이전 질문으로 이동
   const handlePrev = () => {
     router.push("/DetailQuestion/Oily/q2");
   };
@@ -85,7 +85,7 @@ export default function SurveyQuestion() {
           <button
             className={styles.nextButton}
             onClick={handleNext}
-            disabled={selectedOption === null} // 🔥 선택하지 않으면 "다음" 버튼 비활성화
+            disabled={selectedOption === null} // 선택하지 않으면 "다음" 버튼 비활성화
           >
             다음
           </button>

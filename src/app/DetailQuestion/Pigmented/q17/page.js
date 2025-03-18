@@ -29,25 +29,25 @@ export default function PigmentedQ6() {
   };
 
   const handleNext = () => {
-    // ✅ 1. 모든 질문의 점수를 가져오기
+    // 1. 모든 질문의 점수를 가져오기
     let totalPigmentedScore = 0;
     for (let i = 1; i <= 6; i++) {
       totalPigmentedScore +=
         parseInt(localStorage.getItem(`Pigmented_Q${i}`)) || 0;
     }
 
-    // ✅ 2. 착색도 판별
+    // 2. 착색도 판별
     const pigmentedSkin =
       totalPigmentedScore >= 14 ? "Pigmented" : "Non-Pigmented";
 
-    // ✅ 3. 결과를 `localStorage`에 저장
+    // 3. 결과를 `localStorage`에 저장
     localStorage.setItem("totalPigmentedScore", totalPigmentedScore);
     localStorage.setItem("pigmentedSkin", pigmentedSkin);
     console.log(
-      `🎨 색소침착 점수: ${totalPigmentedScore}, 색소침착 유형: ${pigmentedSkin}`
+      `색소침착 점수: ${totalPigmentedScore}, 색소침착 유형: ${pigmentedSkin}`
     );
 
-    // ✅ 4. 최종 결과 페이지로 이동
+    // 4. 최종 결과 페이지로 이동
     router.push("/DetailQuestion/Final/q18");
   };
 

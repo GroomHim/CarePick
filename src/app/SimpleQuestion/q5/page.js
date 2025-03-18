@@ -15,21 +15,21 @@ export default function SurveyQuestion() {
     { label: "절반 정도를 바깥에서 진행", value: 2 },
     { label: "이동시간 외에는 실내에서 진행", value: 1 },
   ];
-  // ✅ 저장된 선택값 불러오기 (localStorage에서 유지)
+  // 저장된 선택값 불러오기 (localStorage에서 유지)
   useEffect(() => {
     const storedAnswer = localStorage.getItem("Q5");
     if (storedAnswer) {
-      setSelectedOption(parseInt(storedAnswer)); // 🔥 기존 선택 유지
+      setSelectedOption(parseInt(storedAnswer)); // 기존 선택 유지
     }
   }, []);
 
-  // ✅ 선택 시 `localStorage`에 저장
+  // 선택 시 `localStorage`에 저장
   const handleOptionSelect = (value) => {
     setSelectedOption(value);
-    localStorage.setItem("Q5", value); // 🔥 선택값 저장
+    localStorage.setItem("Q5", value); // 선택값 저장
   };
 
-  // ✅ 다음 질문으로 이동
+  // 다음 질문으로 이동
   const handleNext = () => {
     console.log("야외 활동 정도:", selectedOption);
     router.push("/SimpleQuestion/q6");

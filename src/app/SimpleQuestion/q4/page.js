@@ -104,7 +104,7 @@ export default function SurveyQuestion() {
           <button
             className={styles.nextButton}
             onClick={handleNext}
-            disabled={selectedOptions.length === 0} // ✅ 하나 이상 선택해야 활성화
+            disabled={selectedOptions.length === 0} // 하나 이상 선택해야 활성화
           >
             다음
           </button>

@@ -16,13 +16,13 @@ export default function SurveyQuestion() {
 
   const [selectedOptions, setSelectedOptions] = useState([]); // 다중 선택 가능하도록 배열로 변경
 
-  // ✅ 저장된 선택값 불러오기 (localStorage에서 유지)
+  // 저장된 선택값 불러오기 (localStorage에서 유지)
   useEffect(() => {
     const storedAnswer = JSON.parse(localStorage.getItem("Q3")) || [];
     setSelectedOptions(storedAnswer);
   }, []);
 
-  // ✅ 선택 시 `localStorage`에 저장
+  // 선택 시 `localStorage`에 저장
   const handleOptionClick = (option) => {
     let newSelection = [];
 
@@ -30,7 +30,7 @@ export default function SurveyQuestion() {
       // "해당 없음"을 선택하면 다른 옵션을 모두 해제하고 해당 없음만 선택
       newSelection = selectedOptions.includes(option) ? [] : [option];
     } else {
-      // ✅ 다른 옵션을 선택하면 "해당 없음"이 자동으로 해제됨
+      // 다른 옵션을 선택하면 "해당 없음"이 자동으로 해제됨
       newSelection = selectedOptions.includes("해당 없음")
         ? [option] // "해당 없음" 선택 중이면, 새 옵션만 유지
         : selectedOptions.includes(option)
@@ -42,7 +42,7 @@ export default function SurveyQuestion() {
     localStorage.setItem("Q3", JSON.stringify(newSelection));
   };
 
-  // ✅ 예민도 점수 계산 후 저장
+  // 예민도 점수 계산 후 저장
   const handleNext = () => {
     let sensitivityScore = 0;
 
@@ -58,7 +58,7 @@ export default function SurveyQuestion() {
     router.push("/SimpleQuestion/q4");
   };
 
-  // ✅ 이전 질문으로 이동
+  // 이전 질문으로 이동
   const handlePrev = () => {
     router.push("/SimpleQuestion/q2");
   };

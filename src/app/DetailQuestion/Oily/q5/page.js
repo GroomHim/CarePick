@@ -15,32 +15,32 @@ export default function SurveyQuestion() {
 
   const [selectedOption, setSelectedOption] = useState(null);
 
-  // ✅ 저장된 선택값 불러오기 (localStorage에서 유지)
+  // 저장된 선택값 불러오기 (localStorage에서 유지)
   useEffect(() => {
     const storedAnswer = localStorage.getItem("Q5");
     if (storedAnswer) {
-      setSelectedOption(parseInt(storedAnswer)); // 🔥 기존 선택 유지
+      setSelectedOption(parseInt(storedAnswer)); // 기존 선택 유지
     }
   }, []);
 
-  // ✅ 선택 시 `localStorage`에 저장
+  // 선택 시 `localStorage`에 저장
   const handleOptionSelect = (value) => {
     setSelectedOption(value);
-    localStorage.setItem("Q5", value); // 🔥 점수를 localStorage에 저장
+    localStorage.setItem("Q5", value); // 점수를 localStorage에 저장
   };
 
   const handleNext = () => {
-    // ✅ 1. 모든 질문의 점수를 가져오기
+    // 1. 모든 질문의 점수를 가져오기
     const q1 = parseInt(localStorage.getItem("Q1")) || 0;
     const q2 = parseInt(localStorage.getItem("Q2")) || 0;
     const q3 = parseInt(localStorage.getItem("Q3")) || 0;
     const q4 = parseInt(localStorage.getItem("Q4")) || 0;
     const q5 = parseInt(localStorage.getItem("Q5")) || 0;
 
-    // ✅ 2. 총점 계산
+    // 2. 총점 계산
     const totalScore = q1 + q2 + q3 + q4 + q5;
 
-    // ✅ 3. 피부 타입 결정
+    // 3. 피부 타입 결정
     let skinType = "";
     if (totalScore >= 1 && totalScore <= 7) {
       skinType = "Dry";
@@ -50,16 +50,16 @@ export default function SurveyQuestion() {
       skinType = "Oily";
     }
 
-    // ✅ 4. 결과를 `localStorage`에 저장
+    // 4. 결과를 `localStorage`에 저장
     localStorage.setItem("totalScore", totalScore);
     localStorage.setItem("skinType", skinType);
     console.log(skinType, totalScore);
 
-    // ✅ 5. 로딩 화면으로 이동
+    // 5. 로딩 화면으로 이동
     router.push("/DetailQuestion/Sensitive/q6");
   };
 
-  // ✅ 이전 질문으로 이동
+  // 이전 질문으로 이동
   const handlePrev = () => {
     router.push("/DetailQuestion/Oily/q4");
   };
@@ -104,7 +104,7 @@ export default function SurveyQuestion() {
           <button
             className={styles.nextButton}
             onClick={handleNext}
-            disabled={selectedOption === null} // 🔥 선택하지 않으면 "다음" 버튼 비활성화
+            disabled={selectedOption === null} // 선택하지 않으면 "다음" 버튼 비활성화
           >
             다음
           </button>

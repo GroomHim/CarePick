@@ -15,7 +15,7 @@ export default function SensitiveQ6() {
 
   const [selectedOption, setSelectedOption] = useState(null);
 
-  // ✅ 기존 선택값 유지
+  // 기존 선택값 유지
   useEffect(() => {
     const storedAnswer = localStorage.getItem("Sensitive_Q6");
     if (storedAnswer) {
@@ -23,13 +23,13 @@ export default function SensitiveQ6() {
     }
   }, []);
 
-  // ✅ 선택 시 `localStorage`에 저장
+  // 선택 시 `localStorage`에 저장
   const handleOptionSelect = (value) => {
     setSelectedOption(value);
     localStorage.setItem("Sensitive_Q6", value);
   };
 
-  // ✅ "다음" 버튼 클릭 시 예민도 최종 계산
+  // "다음" 버튼 클릭 시 예민도 최종 계산
   const handleNext = () => {
     let totalSensitiveScore = 0;
     for (let i = 1; i <= 6; i++) {
@@ -37,20 +37,20 @@ export default function SensitiveQ6() {
         parseInt(localStorage.getItem(`Sensitive_Q${i}`)) || 0;
     }
 
-    // ✅ 예민도 판별 (16 이상: 예민, 그 외: 무난)
+    // 예민도 판별 (16 이상: 예민, 그 외: 무난)
     const sensitiveSkin = totalSensitiveScore >= 16 ? "Sensitive" : "Resistant";
 
     localStorage.setItem("totalSensitiveScore", totalSensitiveScore);
     localStorage.setItem("sensitiveSkin", sensitiveSkin);
     console.log(
-      `🔥 예민도 점수: ${totalSensitiveScore}, 예민도: ${sensitiveSkin}`
+      `예민도 점수: ${totalSensitiveScore}, 예민도: ${sensitiveSkin}`
     );
 
-    // ✅ 착색도 평가로 이동
+    // 착색도 평가로 이동
     router.push("/DetailQuestion/Pigmented/q12");
   };
 
-  // ✅ 이전 질문으로 이동
+  // 이전 질문으로 이동
   const handlePrev = () => {
     router.push("/DetailQuestion/Sensitive/q10");
   };
@@ -95,7 +95,7 @@ export default function SensitiveQ6() {
           <button
             className={styles.nextButton}
             onClick={handleNext}
-            disabled={selectedOption === null} // 🔥 선택하지 않으면 버튼 비활성화
+            disabled={selectedOption === null} // 선택하지 않으면 버튼 비활성화
           >
             다음
           </button>

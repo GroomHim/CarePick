@@ -13,13 +13,13 @@ export default function LoadingScreen() {
         if (prev >= 100) {
           clearInterval(interval);
           setTimeout(() => {
-            router.push("/result"); // ✅ Progress Bar가 끝나면 결과 페이지로 이동
+            router.push("/result"); // Progress Bar가 끝나면 결과 페이지로 이동
           }, 500); // 약간의 딜레이 후 이동
           return 100;
         }
-        return prev + 1; // ✅ Progress Bar 점진적으로 증가
+        return prev + 1; // Progress Bar 점진적으로 증가
       });
-    }, 30); // ✅ 30ms마다 업데이트
+    }, 30); // 30ms마다 업데이트
 
     return () => clearInterval(interval);
   }, [router]);
@@ -57,9 +57,9 @@ export default function LoadingScreen() {
             strokeDasharray="377" /* 전체 원 둘레 */
             strokeDashoffset={
               377 - (377 * progress) / 100
-            } /* ✅ 퍼센트에 따라 변화 */
+            } /* 퍼센트에 따라 변화 */
             strokeLinecap="round"
-            transform="rotate(-90 75 75)" /* ✅ Progress 방향 조정 */
+            transform="rotate(-90 75 75)" /* Progress 방향 조정 */
           />
 
           {/* 퍼센트 텍스트 */}

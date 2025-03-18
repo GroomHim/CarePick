@@ -19,21 +19,21 @@ export default function Question5() {
 
   const [selectedOptions, setSelectedOptions] = useState([]);
 
-  // ✅ 저장된 선택값 불러오기 (localStorage에서 유지)
+  // 저장된 선택값 불러오기 (localStorage에서 유지)
   useEffect(() => {
     const storedAnswer = localStorage.getItem("Q6");
     if (storedAnswer) {
-      setSelectedOptions(JSON.parse(storedAnswer)); // 🔥 기존 선택 유지
+      setSelectedOptions(JSON.parse(storedAnswer)); // 기존 선택 유지
     }
   }, []);
 
-  // ✅ 선택 시 `localStorage`에 저장
+  // 선택 시 `localStorage`에 저장
   const handleOptionClick = (option) => {
     let updatedOptions = selectedOptions.includes(option)
       ? selectedOptions.filter((item) => item !== option) // 선택 해제
       : [...selectedOptions, option]; // 선택 추가
 
-    // 🔥 "해당 없음" 선택 시 다른 옵션을 선택 불가
+    // "해당 없음" 선택 시 다른 옵션을 선택 불가
     if (option === "H") {
       updatedOptions = selectedOptions.includes("H") ? [] : ["H"];
     } else {
@@ -99,14 +99,14 @@ export default function Question5() {
 
     const finalResult = skinTypeMap[finalSkinType];
 
-    // ✅ 6. 최종 결과 `localStorage` 저장
+    // 6. 최종 결과 `localStorage` 저장
     localStorage.setItem("totalSkinScore", totalSkinScore);
     localStorage.setItem("skinType", skinType);
     localStorage.setItem("sensitiveSkin", sensitiveSkin);
     localStorage.setItem("pigmentedSkin", pigmentedSkin);
     localStorage.setItem("finalSkinType", finalResult);
 
-    // ✅ 7. 콘솔 출력 (결과 확인)
+    // 7. 콘솔 출력 (결과 확인)
     console.log(`피부 타입 결과: ${finalResult}`);
     console.log(`상세 결과: ${finalSkinType}`);
     console.log(`건성/중성/지성: ${skinType}`);

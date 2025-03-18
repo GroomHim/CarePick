@@ -1,5 +1,5 @@
 "use client";
-import Image from "next/image"; // ✅ Next.js 이미지 최적화
+import Image from "next/image"; // Next.js 이미지 최적화
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import styles from "../../../styles/q1.module.css";
@@ -8,7 +8,7 @@ export default function SurveyQuestion() {
   const router = useRouter();
   const question = "외출 후 2~3시간 뒤 내 피부 상태는 어떤가요?";
 
-  // ✅ 이미지 파일 경로 설정
+  // 이미지 파일 경로 설정
   const options = [
     { id: "photo1", src: "/skin/1.png", alt: "매우 건조하다", value: 1 },
     { id: "photo2", src: "/skin/2.png", alt: "약간 건조하다", value: 2 },
@@ -19,26 +19,26 @@ export default function SurveyQuestion() {
 
   const [selectedOption, setSelectedOption] = useState(null);
 
-  // ✅ 저장된 선택값 불러오기 (localStorage에서 유지)
+  // 저장된 선택값 불러오기 (localStorage에서 유지)
   useEffect(() => {
     const storedAnswer = localStorage.getItem("Q2");
     if (storedAnswer) {
-      setSelectedOption(parseInt(storedAnswer)); // 🔥 기존 선택 유지
+      setSelectedOption(parseInt(storedAnswer)); // 기존 선택 유지
     }
   }, []);
 
-  // ✅ 선택 시 `localStorage`에 저장 (id 값 저장)
+  // 선택 시 `localStorage`에 저장 (id 값 저장)
   const handleOptionSelect = (id, value) => {
-    setSelectedOption(id); // ✅ id 값을 저장
-    localStorage.setItem("Q2", value); // ✅ 점수 저장
+    setSelectedOption(id); // id 값을 저장
+    localStorage.setItem("Q2", value); // 점수 저장
   };
 
-  // ✅ 다음 질문으로 이동
+  // 다음 질문으로 이동
   const handleNext = () => {
     router.push("/SimpleQuestion/q3");
   };
 
-  // ✅ 이전 질문으로 이동
+  // 이전 질문으로 이동
   const handlePrev = () => {
     router.push("/SimpleQuestion/q1");
   };
@@ -75,7 +75,7 @@ export default function SurveyQuestion() {
               <Image
                 src={option.src}
                 alt={option.alt}
-                width={200} // ✅ 원하는 크기로 조절
+                width={200}
                 height={200}
                 className={styles.optionImage}
               />

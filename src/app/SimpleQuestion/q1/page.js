@@ -21,14 +21,14 @@ export default function SurveyQuestion() {
   useEffect(() => {
     const storedAnswer = localStorage.getItem("Q1");
     if (storedAnswer) {
-      setSelectedOption(parseInt(storedAnswer)); // 🔥 기존 선택 유지
+      setSelectedOption(parseInt(storedAnswer)); // 기존 선택 유지
     }
   }, []);
 
   // 선택값을 `localStorage`에 저장
   const handleOptionSelect = (value) => {
     setSelectedOption(value);
-    localStorage.setItem("Q1", value); // 🔥 점수를 localStorage에 저장
+    localStorage.setItem("Q1", value); // 점수를 localStorage에 저장
   };
 
   // 다음 질문으로 이동

@@ -17,7 +17,7 @@ export default function SurveyQuestion() {
 
   const [selectedOption, setSelectedOption] = useState(null);
 
-  // ✅ 저장된 선택값 불러오기
+  // 저장된 선택값 불러오기
   useEffect(() => {
     const storedAnswer = localStorage.getItem("Q1");
     if (storedAnswer) {
@@ -25,18 +25,18 @@ export default function SurveyQuestion() {
     }
   }, []);
 
-  // ✅ 선택값을 `localStorage`에 저장
+  // 선택값을 `localStorage`에 저장
   const handleOptionSelect = (value) => {
     setSelectedOption(value);
     localStorage.setItem("Q1", value);
   };
 
-  // ✅ 다음 질문으로 이동
+  // 다음 질문으로 이동
   const handleNext = () => {
     router.push("/DetailQuestion/Oily/q2");
   };
 
-  // ✅ 이전 질문으로 이동
+  // 이전 질문으로 이동
   const handlePrev = () => {
     router.push("/");
   };
