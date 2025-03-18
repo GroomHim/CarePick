@@ -27,10 +27,10 @@ export default function SurveyQuestion() {
     }
   }, []);
 
-  // ✅ 선택 시 `localStorage`에 저장
-  const handleOptionSelect = (value) => {
-    setSelectedOption(value);
-    localStorage.setItem("Q2", value); // 🔥 점수를 localStorage에 저장
+  // ✅ 선택 시 `localStorage`에 저장 (id 값 저장)
+  const handleOptionSelect = (id, value) => {
+    setSelectedOption(id); // ✅ id 값을 저장
+    localStorage.setItem("Q2", value); // ✅ 점수 저장
   };
 
   // ✅ 다음 질문으로 이동
@@ -70,7 +70,7 @@ export default function SurveyQuestion() {
               className={`${styles.imageOption} ${
                 selectedOption === option.id ? styles.selected : ""
               }`}
-              onClick={() => handleOptionSelect(option.value)}
+              onClick={() => handleOptionSelect(option.id, option.value)}
             >
               <Image
                 src={option.src}

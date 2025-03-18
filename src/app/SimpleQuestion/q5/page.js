@@ -1,6 +1,6 @@
 "use client";
 import { useRouter } from "next/navigation";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import styles from "../../../styles/q1.module.css";
 
 export default function SurveyQuestion() {
@@ -65,7 +65,7 @@ export default function SurveyQuestion() {
           <button
             key={index}
             className={`${styles.option} ${
-              selectedOption === option ? styles.selected : ""
+              selectedOption === option.value ? styles.selected : ""
             }`}
             onClick={() => handleOptionSelect(option.value)}
           >

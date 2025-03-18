@@ -123,7 +123,7 @@ export default function Question5() {
             <button
               key={index}
               className={`${styles.option} ${
-                selectedOptions.includes(option) ? styles.selected : ""
+                selectedOptions.includes(option.value) ? styles.selected : ""
               }`}
               onClick={() => handleOptionClick(option.value)}
             >

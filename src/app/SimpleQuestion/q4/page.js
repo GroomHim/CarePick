@@ -1,6 +1,6 @@
 "use client";
 import { useRouter } from "next/navigation";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import styles from "../../../styles/q1.module.css";
 
 export default function SurveyQuestion() {
@@ -92,7 +92,7 @@ export default function SurveyQuestion() {
               selectedOptions.includes("해당 없음") && option !== "해당 없음"
             }
           >
-            {option.label}
+            {option}
           </button>
         ))}
 

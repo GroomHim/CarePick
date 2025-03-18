@@ -1,6 +1,6 @@
 "use client";
 import { useRouter } from "next/navigation";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import styles from "../../../styles/q1.module.css";
 
 export default function SurveyQuestion() {
@@ -16,24 +16,26 @@ export default function SurveyQuestion() {
 
   const [selectedOptions, setSelectedOptions] = useState([]); // 다중 선택 가능하도록 배열로 변경
 
-  // 저장된 선택값 불러오기 (localStorage에서 유지)
+  // ✅ 저장된 선택값 불러오기 (localStorage에서 유지)
   useEffect(() => {
     const storedAnswer = JSON.parse(localStorage.getItem("Q3")) || [];
     setSelectedOptions(storedAnswer);
   }, []);
 
-  // 선택 시 `localStorage`에 저장
+  // ✅ 선택 시 `localStorage`에 저장
   const handleOptionClick = (option) => {
     let newSelection = [];
 
     if (option === "해당 없음") {
+      // "해당 없음"을 선택하면 다른 옵션을 모두 해제하고 해당 없음만 선택
       newSelection = selectedOptions.includes(option) ? [] : [option];
     } else {
+      // ✅ 다른 옵션을 선택하면 "해당 없음"이 자동으로 해제됨
       newSelection = selectedOptions.includes("해당 없음")
-        ? [option]
+        ? [option] // "해당 없음" 선택 중이면, 새 옵션만 유지
         : selectedOptions.includes(option)
-        ? selectedOptions.filter((item) => item !== option)
-        : [...selectedOptions, option];
+        ? selectedOptions.filter((item) => item !== option) // 선택 해제
+        : [...selectedOptions, option]; // 선택 추가
     }
 
     setSelectedOptions(newSelection);
@@ -92,7 +94,7 @@ export default function SurveyQuestion() {
               selectedOptions.includes("해당 없음") && option !== "해당 없음"
             }
           >
-            {option.label}
+            {option}
           </button>
         ))}
 
@@ -104,7 +106,7 @@ export default function SurveyQuestion() {
           <button
             className={styles.nextButton}
             onClick={handleNext}
-            disabled={selectedOptions.length === 0} //하나 이상 선택해야 "다음" 버튼 활성화
+            disabled={selectedOptions.length === 0} // 하나 이상 선택해야 "다음" 버튼 활성화
           >
             다음
           </button>
