@@ -1,23 +1,24 @@
 "use client";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import styles from "../../../styles/q1.module.css";
+import styles from "../../../../styles/q1.module.css";
 
 export default function SurveyQuestion() {
   const router = useRouter();
-  const question = "여행할 때 피부 상태가 달라지는 걸 느낀 적이 있나요?";
+  const question = "하루 평균 스킨케어 제품을 바르는 횟수는?";
 
   const options = [
-    { label: "평소보다 건조해진다.", value: -1 },
-    { label: "평소보다 기름져진다.", value: 1 },
-    { label: "변화 없다.", value: 0 },
+    { label: "전혀 사용하지 않는다.", value: 3 },
+    { label: "하루 1회 사용한다.", value: 1 },
+    { label: "하루 2~3회 사용한다.", value: 0 },
+    { label: "하루 4회 이상 사용한다.", value: -1 },
   ];
 
   const [selectedOption, setSelectedOption] = useState(null);
 
   // ✅ 저장된 선택값 불러오기 (localStorage에서 유지)
   useEffect(() => {
-    const storedAnswer = localStorage.getItem("Q5");
+    const storedAnswer = localStorage.getItem("Q4");
     if (storedAnswer) {
       setSelectedOption(parseInt(storedAnswer)); // 🔥 기존 선택 유지
     }
@@ -26,42 +27,17 @@ export default function SurveyQuestion() {
   // ✅ 선택 시 `localStorage`에 저장
   const handleOptionSelect = (value) => {
     setSelectedOption(value);
-    localStorage.setItem("Q5", value); // 🔥 점수를 localStorage에 저장
+    localStorage.setItem("Q4", value); // 🔥 점수를 localStorage에 저장
   };
 
+  // ✅ 다음 질문으로 이동
   const handleNext = () => {
-    // ✅ 1. 모든 질문의 점수를 가져오기
-    const q1 = parseInt(localStorage.getItem("Q1")) || 0;
-    const q2 = parseInt(localStorage.getItem("Q2")) || 0;
-    const q3 = parseInt(localStorage.getItem("Q3")) || 0;
-    const q4 = parseInt(localStorage.getItem("Q4")) || 0;
-    const q5 = parseInt(localStorage.getItem("Q5")) || 0;
-
-    // ✅ 2. 총점 계산
-    const totalScore = q1 + q2 + q3 + q4 + q5;
-
-    // ✅ 3. 피부 타입 결정
-    let skinType = "";
-    if (totalScore >= 1 && totalScore <= 7) {
-      skinType = "Dry";
-    } else if (totalScore >= 8 && totalScore <= 12) {
-      skinType = "Neutral";
-    } else if (totalScore >= 13 && totalScore <= 19) {
-      skinType = "Oily";
-    }
-
-    // ✅ 4. 결과를 `localStorage`에 저장
-    localStorage.setItem("totalScore", totalScore);
-    localStorage.setItem("skinType", skinType);
-    console.log(skinType, totalScore);
-
-    // ✅ 5. 로딩 화면으로 이동
-    router.push("/loading");
+    router.push("/DetailQuestion/Oily/q5");
   };
 
   // ✅ 이전 질문으로 이동
   const handlePrev = () => {
-    router.push("/DetailQuestion/q4");
+    router.push("/DetailQuestion/Oily/q3");
   };
 
   return (
@@ -80,7 +56,7 @@ export default function SurveyQuestion() {
       {/* 설문 선택 박스 */}
       <div className={styles.surveyBox}>
         <div className={styles.progress}>
-          <span className={styles.currentStep}>5</span> / 5
+          <span className={styles.currentStep}>4</span> / 20
         </div>
 
         {/* 옵션 선택 (단일 선택) */}

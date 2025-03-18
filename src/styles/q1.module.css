@@ -67,10 +67,17 @@
 }
 .optionsGrid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* ✅ 2열 정렬 */
+  grid-template-columns: repeat(2, 1fr); /* 2열 정렬 */
   gap: 10px; /* 버튼 간격 */
   margin-top: 10px;
 }
+.optionsGridFinal {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3열 정렬 */
+  gap: 10px; /* 버튼 간격 */
+  margin-top: 10px;
+}
+
 .selected {
   background-color: white;
   color: black;
@@ -136,4 +143,11 @@
 /* ✅ 선택된 이미지 강조 */
 .selected .optionImage {
   border: 3px solid black;
+}
+
+.longQuestion {
+  font-size: 23px; /* 기존보다 작은 크기 */
+  font-weight: 600; /* 가독성을 유지하면서 줄이기 */
+  text-align: center; /* 가운데 정렬 */
+  line-height: 1.4; /* 줄 간격 조정 */
 }

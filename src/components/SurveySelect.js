@@ -44,7 +44,7 @@ export default function SurveySelect() {
         console.log("간단 선택");
         router.push("/SimpleQuestion/q1"); // 간단 설문지 선택 시 q1 페이지로 이동
       } else if (surveyType === "detailed") {
-        router.push("/DetailQuestion/q1"); // 상세 설문지 선택 시 q1 페이지로 이동
+        router.push("/DetailQuestion/Oily/q1"); // 상세 설문지 선택 시 q1 페이지로 이동
         console.log("상세 선택");
       }
     }

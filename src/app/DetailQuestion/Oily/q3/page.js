@@ -1,7 +1,7 @@
 "use client";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import styles from "../../../styles/q1.module.css";
+import styles from "../../../../styles/q1.module.css";
 
 export default function SurveyQuestion() {
   const router = useRouter();
@@ -37,12 +37,12 @@ export default function SurveyQuestion() {
 
   // ✅ 다음 질문으로 이동
   const handleNext = () => {
-    router.push("/DetailQuestion/q4");
+    router.push("/DetailQuestion/Oily/q4");
   };
 
   // ✅ 이전 질문으로 이동
   const handlePrev = () => {
-    router.push("/DetailQuestion/q2");
+    router.push("/DetailQuestion/Oily/q2");
   };
 
   return (
@@ -61,7 +61,7 @@ export default function SurveyQuestion() {
       {/* 설문 선택 박스 */}
       <div className={styles.surveyBox}>
         <div className={styles.progress}>
-          <span className={styles.currentStep}>3</span> / 5
+          <span className={styles.currentStep}>3</span> / 20
         </div>
 
         {/* 옵션 선택 (단일 선택) */}

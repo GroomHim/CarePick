@@ -107,11 +107,11 @@ export default function Question5() {
     localStorage.setItem("finalSkinType", finalResult);
 
     // ✅ 7. 콘솔 출력 (결과 확인)
-    console.log(`🚀 피부 타입 결과: ${finalResult}`);
-    console.log(`📝 상세 결과: ${finalSkinType}`);
-    console.log(`🎯 건성/중성/지성: ${skinType}`);
-    console.log(`⚡ 예민도: ${sensitiveSkin}`);
-    console.log(`🌞 착색도: ${pigmentedSkin}`);
+    console.log(`피부 타입 결과: ${finalResult}`);
+    console.log(`상세 결과: ${finalSkinType}`);
+    console.log(`건성/중성/지성: ${skinType}`);
+    console.log(`예민도: ${sensitiveSkin}`);
+    console.log(`착색도: ${pigmentedSkin}`);
   };
 
   return (

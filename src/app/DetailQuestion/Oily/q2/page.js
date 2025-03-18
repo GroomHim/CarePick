@@ -2,7 +2,7 @@
 import Image from "next/image"; // ✅ Next.js 최적화 이미지 사용
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import styles from "../../../styles/q1.module.css";
+import styles from "../../../../styles/q1.module.css";
 
 export default function SurveyQuestion() {
   const router = useRouter();
@@ -35,12 +35,12 @@ export default function SurveyQuestion() {
 
   // ✅ 다음 질문으로 이동
   const handleNext = () => {
-    router.push("/DetailQuestion/q3");
+    router.push("/DetailQuestion/Oily/q3");
   };
 
   // ✅ 이전 질문으로 이동
   const handlePrev = () => {
-    router.push("/DetailQuestion/q1");
+    router.push("/DetailQuestion/Oily/q1");
   };
 
   return (
@@ -59,7 +59,7 @@ export default function SurveyQuestion() {
       {/* 설문 선택 박스 */}
       <div className={styles.surveyBox}>
         <div className={styles.progress}>
-          <span className={styles.currentStep}>2</span> / 5
+          <span className={styles.currentStep}>2</span> / 20
         </div>
 
         {/* 이미지 버튼 선택 */}

@@ -1,43 +1,38 @@
 "use client";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import styles from "../../../styles/q1.module.css";
+import styles from "../../../../styles/q1.module.css";
 
-export default function SurveyQuestion() {
+export default function PigmentedQ3() {
   const router = useRouter();
-  const question = "하루 평균 스킨케어 제품을 바르는 횟수는?";
-
+  const question = "햇빛을 받으면 주근깨가 생기나요?";
   const options = [
-    { label: "전혀 사용하지 않는다.", value: 3 },
-    { label: "하루 1회 사용한다.", value: 1 },
-    { label: "하루 2~3회 사용한다.", value: 0 },
-    { label: "하루 4회 이상 사용한다.", value: -1 },
+    { label: "전혀 생기지 않는다", value: 1 },
+    { label: "가끔 생기지만 쉽게 사라진다", value: 2 },
+    { label: "햇빛을 받으면 생기고 없어지는 데 시간이 오래 걸린다", value: 3 },
+    { label: "주근깨가 쉽게 생기고 오랫동안 남아 있다", value: 4 },
   ];
 
   const [selectedOption, setSelectedOption] = useState(null);
 
-  // ✅ 저장된 선택값 불러오기 (localStorage에서 유지)
   useEffect(() => {
-    const storedAnswer = localStorage.getItem("Q4");
+    const storedAnswer = localStorage.getItem("Pigmented_Q3");
     if (storedAnswer) {
-      setSelectedOption(parseInt(storedAnswer)); // 🔥 기존 선택 유지
+      setSelectedOption(parseInt(storedAnswer));
     }
   }, []);
 
-  // ✅ 선택 시 `localStorage`에 저장
   const handleOptionSelect = (value) => {
     setSelectedOption(value);
-    localStorage.setItem("Q4", value); // 🔥 점수를 localStorage에 저장
+    localStorage.setItem("Pigmented_Q3", value);
   };
 
-  // ✅ 다음 질문으로 이동
   const handleNext = () => {
-    router.push("/DetailQuestion/q5");
+    router.push("/DetailQuestion/Pigmented/q15");
   };
 
-  // ✅ 이전 질문으로 이동
   const handlePrev = () => {
-    router.push("/DetailQuestion/q3");
+    router.push("/DetailQuestion/Pigmented/q13");
   };
 
   return (
@@ -49,20 +44,14 @@ export default function SurveyQuestion() {
         height="30"
         style={{ display: "block", margin: "30px auto" }}
       />
-
-      {/* 질문 박스 */}
       <div className={styles.questionBox}>{`Q. ${question}`}</div>
-
-      {/* 설문 선택 박스 */}
       <div className={styles.surveyBox}>
         <div className={styles.progress}>
-          <span className={styles.currentStep}>4</span> / 5
+          <span className={styles.currentStep}>14</span> / 20
         </div>
-
-        {/* 옵션 선택 (단일 선택) */}
-        {options.map((option) => (
+        {options.map((option, index) => (
           <button
-            key={option.value}
+            key={index}
             className={`${styles.option} ${
               selectedOption === option.value ? styles.selected : ""
             }`}
@@ -71,8 +60,6 @@ export default function SurveyQuestion() {
             {option.label}
           </button>
         ))}
-
-        {/* 이전 / 다음 버튼 */}
         <div className={styles.buttonContainer}>
           <button className={styles.prevButton} onClick={handlePrev}>
             이전
@@ -80,7 +67,7 @@ export default function SurveyQuestion() {
           <button
             className={styles.nextButton}
             onClick={handleNext}
-            disabled={selectedOption === null} // 🔥 선택하지 않으면 "다음" 버튼 비활성화
+            disabled={selectedOption === null}
           >
             다음
           </button>
