@@ -43,59 +43,75 @@ export default function Question5() {
     }
 
     setSelectedOptions(updatedOptions);
-    localStorage.setItem("Q6", JSON.stringify(updatedOptions)); // 🔥 선택값 저장
+    localStorage.setItem("Q6", JSON.stringify(updatedOptions)); // 선택값 저장
   };
 
-  // ✅ "다음" 버튼 클릭 시 점수 계산 및 결과 저장
+  // "다음" 버튼 클릭 시 점수 계산 및 결과 저장
   const handleNext = () => {
-    // ✅ 1. 모든 질문의 점수를 가져오기
-    const q1 = parseInt(localStorage.getItem("Q1")) || 0;
-    const q2 = parseInt(localStorage.getItem("Q2")) || 0;
-    const q3 = localStorage.getItem("Q3")
-      ? JSON.parse(localStorage.getItem("Q3")).length
-      : 0;
-    const q4 = localStorage.getItem("Q4")
-      ? JSON.parse(localStorage.getItem("Q4")).length
-      : 0;
-    const q5 = parseInt(localStorage.getItem("Q5")) || 0;
-
-    // ✅ 2. 피부 타입 결정 (Q1 + Q2 합산)
-    const totalSkinScore = q1 + q2;
-    let skinType = "";
-    if (totalSkinScore >= 2 && totalSkinScore <= 4) {
-      skinType = "Dry";
-    } else if (totalSkinScore >= 5 && totalSkinScore <= 7) {
-      skinType = "Neutral";
-    } else if (totalSkinScore >= 8 && totalSkinScore <= 10) {
-      skinType = "Oily";
-    }
-
-    // ✅ 3. 예민도 결정 (Q3 선택 개수 기준)
-    const sensitiveSkin = q3 >= 3 ? "Sensitive" : "Resistant";
-
-    // ✅ 4. 착색도 결정 (Q4 선택 개수 기준)
-    const pigmentedSkin = q4 >= 3 ? "Pigmented" : "Non-Pigmented";
-
-    // ✅ 5. 피부 고민 저장
-    localStorage.setItem("skinConcerns", JSON.stringify(selectedOptions));
-
-    // ✅ 6. 결과 저장
-    localStorage.setItem("totalSkinScore", totalSkinScore);
-    localStorage.setItem("skinType", skinType);
-    localStorage.setItem("sensitiveSkin", sensitiveSkin);
-    localStorage.setItem("pigmentedSkin", pigmentedSkin);
-
-    console.log(
-      `🚀 피부 타입: ${skinType}, 예민도: ${sensitiveSkin}, 착색도: ${pigmentedSkin}`
-    );
-    console.log(`📝 선택한 피부 고민:`, selectedOptions);
-
-    // ✅ 7. 로딩 화면으로 이동
+    calculateSkinType(); // 최종 피부 타입 계산
     router.push("/loading");
   };
 
   const handlePrev = () => {
-    router.push("/SimpleQuestion/q5"); // ✅ 4번째 질문으로 이동
+    router.push("/SimpleQuestion/q5"); // 4번째 질문으로 이동
+  };
+  const calculateSkinType = () => {
+    // 1. 피부 타입 구분 (건성, 중성, 지성) → (1,2번 질문)
+    const q1 = parseInt(localStorage.getItem("Q1")) || 0;
+    const q2 = parseInt(localStorage.getItem("Q2")) || 0;
+    const totalSkinScore = q1 + q2;
+    let skinType = "";
+
+    if (totalSkinScore >= 2 && totalSkinScore <= 4) {
+      skinType = "건성 (Dry)";
+    } else if (totalSkinScore >= 5 && totalSkinScore <= 7) {
+      skinType = "중성 (Neutral)";
+    } else if (totalSkinScore >= 8 && totalSkinScore <= 10) {
+      skinType = "지성 (Oily)";
+    }
+
+    // 2. 예민도 구분 (3번 질문)
+    const q3 = JSON.parse(localStorage.getItem("Q3") || "[]").length;
+    const sensitiveSkin = q3 >= 3 ? "예민 O" : "예민 X";
+
+    // 3. 착색도 구분 (4번 질문)
+    const q4 = JSON.parse(localStorage.getItem("Q4") || "[]").length;
+    const pigmentedSkin = q4 >= 3 ? "착색 O" : "착색 X";
+
+    // 4. 최종 피부 타입 결정 (12가지 타입)
+    let finalSkinType = `${skinType} - ${sensitiveSkin} - ${pigmentedSkin}`;
+
+    // 5. 최종 피부 타입 매칭 (1~12번)
+    const skinTypeMap = {
+      "지성 (Oily) - 예민 O - 착색 O": "지성 1번",
+      "지성 (Oily) - 예민 X - 착색 O": "지성 2번",
+      "지성 (Oily) - 예민 O - 착색 X": "지성 3번",
+      "지성 (Oily) - 예민 X - 착색 X": "지성 4번",
+      "중성 (Neutral) - 예민 O - 착색 O": "중성 1번",
+      "중성 (Neutral) - 예민 X - 착색 O": "중성 2번",
+      "중성 (Neutral) - 예민 O - 착색 X": "중성 3번",
+      "중성 (Neutral) - 예민 X - 착색 X": "중성 4번",
+      "건성 (Dry) - 예민 O - 착색 O": "건성 1번",
+      "건성 (Dry) - 예민 X - 착색 O": "건성 2번",
+      "건성 (Dry) - 예민 O - 착색 X": "건성 3번",
+      "건성 (Dry) - 예민 X - 착색 X": "건성 4번",
+    };
+
+    const finalResult = skinTypeMap[finalSkinType];
+
+    // ✅ 6. 최종 결과 `localStorage` 저장
+    localStorage.setItem("totalSkinScore", totalSkinScore);
+    localStorage.setItem("skinType", skinType);
+    localStorage.setItem("sensitiveSkin", sensitiveSkin);
+    localStorage.setItem("pigmentedSkin", pigmentedSkin);
+    localStorage.setItem("finalSkinType", finalResult);
+
+    // ✅ 7. 콘솔 출력 (결과 확인)
+    console.log(`🚀 피부 타입 결과: ${finalResult}`);
+    console.log(`📝 상세 결과: ${finalSkinType}`);
+    console.log(`🎯 건성/중성/지성: ${skinType}`);
+    console.log(`⚡ 예민도: ${sensitiveSkin}`);
+    console.log(`🌞 착색도: ${pigmentedSkin}`);
   };
 
   return (
