@@ -18,7 +18,7 @@ export default function SurveySelect() {
         // 모든 가능한 다음 페이지를 한 번에 미리 로드
         const preloadPromises = [
           fetch('/SimpleQuestion/q1', { priority: 'high' }),
-          fetch('/DetailQuestion/q1', { priority: 'high' })
+          fetch('/DetailQuestion/Oily/q1', { priority: 'high' })
         ];
         
         await Promise.all(preloadPromises);
