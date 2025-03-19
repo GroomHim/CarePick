@@ -52,7 +52,7 @@ export async function testConnection() {
 export async function saveSurveyType(surveyType) {
   try {
     const [result] = await getPool().execute(
-      'INSERT INTO survey_responses (survey_type) VALUES (?)',
+      'INSERT INTO SURVEY_RESPONSES (survey_type) VALUES (?)',
       [surveyType]
     );
     return result.insertId;
