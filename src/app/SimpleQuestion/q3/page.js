@@ -18,8 +18,14 @@ export default function SurveyQuestion() {
 
   // 저장된 선택값 불러오기 (localStorage에서 유지)
   useEffect(() => {
-    const storedAnswer = JSON.parse(localStorage.getItem("Q3")) || [];
-    setSelectedOptions(storedAnswer);
+    try {
+      const storedValue = localStorage.getItem("Q3");
+      const storedAnswer = storedValue ? JSON.parse(storedValue) : [];
+      setSelectedOptions(Array.isArray(storedAnswer) ? storedAnswer : []);
+    } catch (error) {
+      console.error("localStorage 데이터 파싱 오류:", error);
+      setSelectedOptions([]);
+    }
   }, []);
 
   // 선택 시 `localStorage`에 저장
