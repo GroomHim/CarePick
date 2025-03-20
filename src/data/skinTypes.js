@@ -13,19 +13,19 @@ export const skinTypes = {
         type: "토너",
         name: "[아비브] 어성초 카밍 토너 스킨부스터",
         price: "24,000원",
-        image: "/products/abib_toner.jpg"
+        image: "https://d33ur1yh5ph6b5.cloudfront.net/52fe9ac2-ee08-4824-b85a-70d4352a56dd-mid"
       },
       {
         type: "수분크림",
         name: "[라로슈포제] 시카플라스트 밤 B5",
         price: "32,000원",
-        image: "/products/laroche_cicaplast.jpg"
+        image: "https://d33ur1yh5ph6b5.cloudfront.net/52fe9ac2-ee08-4824-b85a-70d4352a56dd-mid"
       },
       {
         type: "로션",
         name: "[아토팜] 탑투토 지성 로션",
         price: "22,000원",
-        image: "/products/atopalm_lotion.jpg"
+        image: "https://d33ur1yh5ph6b5.cloudfront.net/52fe9ac2-ee08-4824-b85a-70d4352a56dd-mid"
       }
     ]
   },
@@ -39,19 +39,19 @@ export const skinTypes = {
         type: "토너",
         name: "[이니스프리] 그린티 씨드 토너",
         price: "18,000원",
-        image: "/products/innisfree_toner.jpg"
+        image: "https://d33ur1yh5ph6b5.cloudfront.net/52fe9ac2-ee08-4824-b85a-70d4352a56dd-mid"
       },
       {
         type: "수분크림",
         name: "[이니스프리] 그린티 씨드 크림",
         price: "29,000원",
-        image: "/products/innisfree_cream.jpg"
+        image: "https://d33ur1yh5ph6b5.cloudfront.net/52fe9ac2-ee08-4824-b85a-70d4352a56dd-mid"
       },
       {
         type: "로션",
         name: "[코스알엑스] 갈락토미세스 로션",
         price: "28,000원",
-        image: "/products/cosrx_lotion.jpg"
+        image: "https://d33ur1yh5ph6b5.cloudfront.net/52fe9ac2-ee08-4824-b85a-70d4352a56dd-mid"
       }
     ]
   },
@@ -59,17 +59,25 @@ export const skinTypes = {
   "건성 3번": {
     id: 3,
     name: "건성 3번",
-    description: "건성 3번 타입 피부는 수분 부족으로 인한 건조함과 함께 예민한 피부로 외부 자극에 민감하게 반응하지만, 착색도는 낮아 비교적 깨끗한 피부 톤을 유지하는 편입니다. 피부 진정을 위한 약산성 제품과 함께 수분 공급이 잘되는 보습제를 사용하는 것이 중요합니다. 레티놀과 같은 기능성 성분은 낮은 농도부터 천천히 사용해 피부 적응 과정을 거치며 사용해야 합니다. 외부 자극을 최소화하기 위해 물리적인 각질 제거보다는 수분 공급과 진정을 우선시하는 스킨케어 루틴을 권장합니다.",
+    description: "건조하고 예민하지만 착색은 잘 되지 않는 피부타입입니다. 무자극 보습 제품을 사용하고 자극적인 성분은 피하세요.",
     products: [
       {
-        name: "[일리윤] 세라마이드 아토 집중 크림",
+        type: "토너",
+        name: "[일리윤] 프로바이오틱스 스킨 토너",
         price: "17,900원",
-        image: "/products/illiyoon_cream.jpg"
+        image: "https://d33ur1yh5ph6b5.cloudfront.net/52fe9ac2-ee08-4824-b85a-70d4352a56dd-mid"
       },
       {
-        name: "[아벤느] 시칼파트 크림",
+        type: "수분크림",
+        name: "[일리윤] 세라마이드 아토 집중 크림",
+        price: "19,900원",
+        image: "https://d33ur1yh5ph6b5.cloudfront.net/52fe9ac2-ee08-4824-b85a-70d4352a56dd-mid"
+      },
+      {
+        type: "로션",
+        name: "[아벤느] 시칼파트 로션",
         price: "26,000원",
-        image: "/products/avene_cream.jpg"
+        image: "https://d33ur1yh5ph6b5.cloudfront.net/52fe9ac2-ee08-4824-b85a-70d4352a56dd-mid"
       }
     ]
   },
@@ -77,17 +85,25 @@ export const skinTypes = {
   "건성 4번": {
     id: 4,
     name: "건성 4번",
-    description: "건성 4번 타입 피부는 건성이지만 착색도가 낮아 비교적 균일한 피부 톤을 유지하는 유형입니다. 보습과 수분 공급을 통해 건조함을 예방하는 것이 중요합니다. 나이아신아마이드나 판테놀 등의 피부 장벽 강화 성분이 포함된 제품을 사용하는 것이 좋습니다. 자외선 차단제를 꾸준히 사용하여 피부 손상을 방지하고, 수분 공급과 영양을 위한 고보습 크림이나 세럼을 함께 사용하면 피부의 탄력과 윤기를 유지할 수 있습니다.",
+    description: "건조하지만 민감하지 않고 착색도 잘 되지 않는 피부타입입니다. 풍부한 영양감의 크림과 오일 제품이 적합합니다.",
     products: [
       {
-        name: "[세라베] 모이스처라이징 크림",
+        type: "토너",
+        name: "[토리든] 다이브인 저분자 히알루론산 토너",
         price: "23,000원",
-        image: "/products/cerave_cream.jpg"
+        image: "https://d33ur1yh5ph6b5.cloudfront.net/52fe9ac2-ee08-4824-b85a-70d4352a56dd-mid"
       },
       {
-        name: "[토리든] 다이브인 세럼",
+        type: "수분크림",
+        name: "[세라베] 모이스처라이징 크림",
+        price: "25,000원",
+        image: "https://d33ur1yh5ph6b5.cloudfront.net/52fe9ac2-ee08-4824-b85a-70d4352a56dd-mid"
+      },
+      {
+        type: "로션",
+        name: "[토리든] 다이브인 세럼 로션",
         price: "26,500원",
-        image: "/products/torriden_serum.jpg"
+        image: "https://d33ur1yh5ph6b5.cloudfront.net/52fe9ac2-ee08-4824-b85a-70d4352a56dd-mid"
       }
     ]
   },
@@ -96,17 +112,25 @@ export const skinTypes = {
   "중성 1번": {
     id: 5,
     name: "중성 1번",
-    description: "중성 1번 타입 피부는 유분과 수분의 균형이 잘 맞아 있기 때문에",
+    description: "균형 잡힌 피부이지만 예민하고 착색이 잘 됩니다. 자외선 차단과 저자극 제품 사용이 중요합니다.",
     products: [
       {
-        name: "[식물나라] 알로에 수딩젤",
+        type: "토너",
+        name: "[식물나라] 알로에 수딩 토너",
         price: "12,000원",
-        image: "/products/nature_aloegel.jpg"
+        image: "https://d33ur1yh5ph6b5.cloudfront.net/52fe9ac2-ee08-4824-b85a-70d4352a56dd-mid"
       },
       {
-        name: "[아이소이] 불가리안 로즈 진정 세럼",
+        type: "수분크림",
+        name: "[아이소이] 불가리안 로즈 진정 크림",
         price: "32,000원",
-        image: "/products/isoi_rose.jpg"
+        image: "https://d33ur1yh5ph6b5.cloudfront.net/52fe9ac2-ee08-4824-b85a-70d4352a56dd-mid"
+      },
+      {
+        type: "로션",
+        name: "[아이소이] 불가리안 로즈 진정 로션",
+        price: "28,000원",
+        image: "https://d33ur1yh5ph6b5.cloudfront.net/52fe9ac2-ee08-4824-b85a-70d4352a56dd-mid"
       }
     ]
   },
@@ -114,17 +138,25 @@ export const skinTypes = {
   "중성 2번": {
     id: 6,
     name: "중성 2번",
-    description: "중성 2번 타입 피부는 유분과 수분의 균형이 잘 맞는 중성 타입이지만",
+    description: "균형 잡힌 피부이고 민감하지 않지만 착색이 잘 됩니다. 자외선 차단과 함께 미백 기능성 제품 사용이 권장됩니다.",
     products: [
       {
-        name: "[미쟝센] 퍼펙트 세럼",
+        type: "토너",
+        name: "[미쟝센] 퍼펙트 토너",
         price: "16,000원",
-        image: "/products/mise_serum.jpg"
+        image: "https://d33ur1yh5ph6b5.cloudfront.net/52fe9ac2-ee08-4824-b85a-70d4352a56dd-mid"
       },
       {
-        name: "[닥터지] 브라이트닝 피링젤",
+        type: "수분크림",
+        name: "[닥터지] 레드 블레미쉬 크림",
         price: "19,800원",
-        image: "/products/drg_peeling.jpg"
+        image: "https://d33ur1yh5ph6b5.cloudfront.net/52fe9ac2-ee08-4824-b85a-70d4352a56dd-mid"
+      },
+      {
+        type: "로션",
+        name: "[닥터지] 브라이트닝 로션",
+        price: "21,000원",
+        image: "https://d33ur1yh5ph6b5.cloudfront.net/52fe9ac2-ee08-4824-b85a-70d4352a56dd-mid"
       }
     ]
   },
@@ -132,17 +164,25 @@ export const skinTypes = {
   "중성 3번": {
     id: 7,
     name: "중성 3번",
-    description: "중성 3번 타입 피부는 유분과 수분의 균형이 잘 맞아 있어 이러한 밸런스를 유지하는 것이 중요합니다. 그러나 피부가 민감해 사용하는 제품에 따라 피부 상태가 크게 달라질 수 있으므로, 화장품 선택에 신중해야 합니다. 특히 맞지 않는 화장품을 사용했을 때 피부에 일시적인 반응이 나타날 수 있으며, 적절한 미백 및 관리가 이루어지지 않으면 흔적이 남을 수 있습니다. 따라서 초기부터 진정 효과가 있는 화장품을 사용해 피부를 보호하는 것이 중요합니다. 민감성 피부에 적합한 제품을 사용하는 꾸준한 관리가 필요합니다.",
+    description: "균형 잡힌 피부이지만 예민한 편입니다. 저자극 클렌징과 진정 효과가 있는 제품이 좋습니다.",
     products: [
       {
-        name: "[에스트라] 아토베리어365 크림",
-        price: "31,000원",
-        image: "/products/atobarrier_cream.jpg"
+        type: "토너",
+        name: "[에스트라] 아토베리어365 토너",
+        price: "27,000원",
+        image: "https://d33ur1yh5ph6b5.cloudfront.net/52fe9ac2-ee08-4824-b85a-70d4352a56dd-mid"
       },
       {
-        name: "[바이오더마] 센시비오 H2O",
+        type: "수분크림",
+        name: "[에스트라] 아토베리어365 크림",
+        price: "31,000원",
+        image: "https://d33ur1yh5ph6b5.cloudfront.net/52fe9ac2-ee08-4824-b85a-70d4352a56dd-mid"
+      },
+      {
+        type: "로션",
+        name: "[바이오더마] 센시비오 로션",
         price: "22,000원",
-        image: "/products/bioderma.jpg"
+        image: "https://d33ur1yh5ph6b5.cloudfront.net/52fe9ac2-ee08-4824-b85a-70d4352a56dd-mid"
       }
     ]
   },
@@ -150,17 +190,25 @@ export const skinTypes = {
   "중성 4번": {
     id: 8,
     name: "중성 4번",
-    description: "중성 4번 타입 피부는 유분과 수분의 균형이 잘 맞는 중성 타입으로, 착색도가 낮아 비교적 깨끗한 피부 톤을 유지하고 있는 것이 특징입니다. 그러나 이러한 밸런스를 유지하기 위해서는 피부 관리에 소홀하지 않아야 합니다. 피부 턴오버 주기에 맞춰 자신에게 적합한 화장품을 사용하는 것이 중요하며, 레티놀이나 나이아신아마이드 성분이 포함된 기능성 화장품을 사용하면 피부결 개선과 건강한 광택 유지에 도움이 됩니다. 특히 수분 공급과 자외선 차단을 철저히 하여 피부 손상을 예방하는 것이 좋습니다. 또한, 피부 상태를 주기적으로 점검하여 필요한 경우 미백이나 진정 케어 제품을 보완해 사용하면 더욱 안정적인 피부 컨디션을 유지할 수 있습니다.",
+    description: "가장 이상적인 피부타입으로, 균형이 잘 잡혀 있고 문제가 적습니다. 기초 제품으로 꾸준히 관리해주세요.",
     products: [
       {
+        type: "토너",
         name: "[아누아] 어성초 77 토너",
         price: "28,000원",
-        image: "/products/anua_toner.jpg"
+        image: "https://d33ur1yh5ph6b5.cloudfront.net/52fe9ac2-ee08-4824-b85a-70d4352a56dd-mid"
       },
       {
-        name: "[클리오] 킬커버 쿠션",
+        type: "수분크림",
+        name: "[아누아] 어성초 80 크림",
         price: "32,000원",
-        image: "/products/clio_cushion.jpg"
+        image: "https://d33ur1yh5ph6b5.cloudfront.net/52fe9ac2-ee08-4824-b85a-70d4352a56dd-mid"
+      },
+      {
+        type: "로션",
+        name: "[클리오] 킬커버 로션",
+        price: "30,000원",
+        image: "https://d33ur1yh5ph6b5.cloudfront.net/52fe9ac2-ee08-4824-b85a-70d4352a56dd-mid"
       }
     ]
   },
@@ -169,17 +217,25 @@ export const skinTypes = {
   "지성 1번": {
     id: 9,
     name: "지성 1번",
-    description: "지성 1번 타입의 피부는 피지 분비량이 많아 유분기로 인한 고민이 생기기 쉬운 피부 유형입니다. 피부 반응이 민감하기 때문에 사용하는 제품에 따라 피부 상태가 크게 좌우되므로, 화장품 선택에 신중을 기해야 합니다. 또한 여드름 상처나 뾰루지 자국이 남아 착색 관리도 필요합니다. 민감성 피부에 적합한 제품과 나이아신아마이드 성분이 포함된 착색 개선 화장품을 사용하는 것이 좋습니다. 레티놀 성분은 미백 및 피부결 개선에 도움이 될 수 있지만, 예민한 피부에는 주의가 필요합니다.",
+    description: "피지가 많고 예민하며 착색이 잘 되는 피부타입입니다. 오일프리 제품과 자극이 적은 각질 제거제가 도움이 됩니다.",
     products: [
       {
+        type: "토너",
         name: "[아누아] 독도 토너",
         price: "24,000원",
-        image: "/products/anua_dokdo.jpg"
+        image: "https://d33ur1yh5ph6b5.cloudfront.net/52fe9ac2-ee08-4824-b85a-70d4352a56dd-mid"
       },
       {
+        type: "수분크림",
         name: "[닥터지] 레드 블레미쉬 클리어 수딩 크림",
         price: "28,000원",
-        image: "/products/drg_cream.jpg"
+        image: "https://d33ur1yh5ph6b5.cloudfront.net/52fe9ac2-ee08-4824-b85a-70d4352a56dd-mid"
+      },
+      {
+        type: "로션",
+        name: "[아이소이] 포어타이트닝 로션",
+        price: "26,000원",
+        image: "https://d33ur1yh5ph6b5.cloudfront.net/52fe9ac2-ee08-4824-b85a-70d4352a56dd-mid"
       }
     ]
   },
@@ -187,25 +243,25 @@ export const skinTypes = {
   "지성 2번": {
     id: 10,
     name: "지성 2번",
-    description: "지성 2번 타입의 피부는 피지 분비량이 많아 유분기로 인한 고민이 생기기 쉬운 피부 유형입니다. 피지 때문에 모공이 막혀 여드름이나 일시적인 뾰루지가 발생하기 쉬우므로",
+    description: "피지 분비가 많고 착색이 잘 되지만 민감하지 않은 피부타입입니다. 모공 케어와 미백 기능성 제품이 효과적입니다.",
     products: [
       {
         type: "토너",
-        name: "[아비브] 어성초 카밍 토너 스킨부스터",
-        price: "24,000원",
-        image: "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/550/10/0000/0015/A00000015525319ko.jpg?l=ko"
+        name: "[코스알엑스] BHA 블랙헤드 파워 리퀴드",
+        price: "21,000원",
+        image: "https://d33ur1yh5ph6b5.cloudfront.net/52fe9ac2-ee08-4824-b85a-70d4352a56dd-mid"
       },
       {
         type: "수분크림",
-        name: "[라로슈포제] 시카플라스트 밤 B5",
-        price: "32,000원",
-        image: "https://img.danawa.com/prod_img/500000/016/294/img/3294016_1.jpg?_v=20191202160042"
+        name: "[이니스프리] 그린티 밸런싱 크림 EX",
+        price: "25,000원",
+        image: "https://d33ur1yh5ph6b5.cloudfront.net/52fe9ac2-ee08-4824-b85a-70d4352a56dd-mid"
       },
       {
         type: "로션",
-        name: "[아토팜] 탑투토 지성 로션",
-        price: "22,000원",
-        image: "https://m.toptotoe.kr/web/product/medium/201804/393_shop1_899210.jpg"
+        name: "[메디힐] 티트리 에센셜 로션",
+        price: "18,000원",
+        image: "https://d33ur1yh5ph6b5.cloudfront.net/52fe9ac2-ee08-4824-b85a-70d4352a56dd-mid"
       }
     ]
   },
@@ -213,17 +269,25 @@ export const skinTypes = {
   "지성 3번": {
     id: 11,
     name: "지성 3번",
-    description: "지성 3번 타입 피부는 피지 분비량이 많아 유분기로 고민이 생기기 쉬운 유형입니다. 또한 피부가 민감하여 사용하는 제품에 따라 피부 상태가 크게 달라질 수 있으므로, 화장품 선택에 신중해야 합니다. 지용성과 민감성을 동시에 고려한 전용 화장품을 사용하는 것이 추천됩니다. 레티놀 성분은 미백 및 피부결 개선에 효과적일 수 있지만, 예민한 피부에는 주의가 필요합니다. 세안 시 피부가 지나치게 건조해지지 않도록 미온수로 세안한 후 즉시 수분을 보충해 주는 것이 중요합니다.",
+    description: "피지 분비가 많고 예민하지만 착색은 잘 되지 않는 피부타입입니다. 진정 효과가 있는 가벼운 텍스처의 제품이 좋습니다.",
     products: [
       {
+        type: "토너",
         name: "[라운드랩] 1025 독도 토너",
         price: "22,000원",
-        image: "/products/roundlab_toner.jpg"
+        image: "https://d33ur1yh5ph6b5.cloudfront.net/52fe9ac2-ee08-4824-b85a-70d4352a56dd-mid"
       },
       {
+        type: "수분크림",
         name: "[피지오겔] 레드 수딩 AI 크림",
         price: "33,000원",
-        image: "/products/physiogel_cream.jpg"
+        image: "https://d33ur1yh5ph6b5.cloudfront.net/52fe9ac2-ee08-4824-b85a-70d4352a56dd-mid"
+      },
+      {
+        type: "로션",
+        name: "[라운드랩] 자작나무 로션",
+        price: "25,000원",
+        image: "https://d33ur1yh5ph6b5.cloudfront.net/52fe9ac2-ee08-4824-b85a-70d4352a56dd-mid"
       }
     ]
   },
@@ -231,17 +295,25 @@ export const skinTypes = {
   "지성 4번": {
     id: 12,
     name: "지성 4번",
-    description: "지성 4번 타입 피부는 피지 분비량이 많아 유분기로 인한 고민이 생기기 쉬운 피부 유형입니다. 피지로 인해 모공이 막혀 여드름이나 뾰루지가 발생할 수 있으므로, 세안에 특히 신경을 써야 하며 약산성 세안제를 사용하는 것이 좋습니다. 또한, 레티놀이나 나이아신아마이드 성분이 포함된 기능성 화장품을 사용하면 피부 개선 효과를 크게 느낄 수 있습니다. 피부 턴오버 주기에 맞춰 자신에게 적합한 화장품을 찾아가는 꾸준한 관리가 필요합니다.",
+    description: "피지 분비가 많지만 다른 문제는 적은 피부타입입니다. 산뜻한 사용감의 가벼운 제품과 모공 관리 제품이 적합합니다.",
     products: [
       {
-        name: "[이니스프리] 화산송이 모공 마스크",
+        type: "토너",
+        name: "[이니스프리] 화산송이 포어 토너",
         price: "16,000원",
-        image: "/products/innisfree_mask.jpg"
+        image: "https://d33ur1yh5ph6b5.cloudfront.net/52fe9ac2-ee08-4824-b85a-70d4352a56dd-mid"
       },
       {
-        name: "[더페이스샵] 잉크래스팅 파운데이션",
+        type: "수분크림",
+        name: "[이니스프리] 화산송이 포어 크림",
+        price: "20,000원",
+        image: "https://d33ur1yh5ph6b5.cloudfront.net/52fe9ac2-ee08-4824-b85a-70d4352a56dd-mid"
+      },
+      {
+        type: "로션",
+        name: "[더페이스샵] 잉크래스팅 로션",
         price: "27,000원",
-        image: "/products/faceshop_foundation.jpg"
+        image: "https://d33ur1yh5ph6b5.cloudfront.net/52fe9ac2-ee08-4824-b85a-70d4352a56dd-mid"
       }
     ]
   }
