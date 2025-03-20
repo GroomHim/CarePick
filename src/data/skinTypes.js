@@ -7,17 +7,25 @@ export const skinTypes = {
   "건성 1번": {
     id: 1,
     name: "건성 1번",
-    description: "건성 1번 타입 피부는 건성으로 인해 수분이 부족하고, 피부가 예민하여 외부 자극에 민감하게 반응할 수 있는 유형입니다. 또한 착색도가 높아 색소침착이 발생하기 쉬운 특징이 있습니다. 이러한 피부는 수분 공급과 진정 케어에 특히 집중해야 하며, 촉촉함을 유지할 수 있는 고보습 제품을 사용하는 것이 중요합니다. 나이아신아마이드와 같은 미백 성분이 포함된 화장품을 사용하면 색소침착 완화에 도움이 됩니다. 피부가 예민하기 때문에 자극이 적은 약산성 제품을 선택하고, 레티놀 등 강한 기능성 성분을 사용할 때는 저농도부터 시작해 피부 적응 과정을 거치는 것이 좋습니다. 외출 시에는 자외선 차단제를 필수적으로 사용해 추가적인 착색을 방지해야 합니다. 또한, 수분과 영양을 동시에 공급할 수 있는 나이트 크림이나 수면 팩을 활용해 밤 사이 피부 장벽을 강화하는 것도 좋은 방법입니다.",
+    description: "건조하고 예민하며 착색이 잘 되는 피부타입입니다. 순한 성분의 보습제품과 자외선 차단제 사용이 필수적입니다. 과도한 각질 제거를 피하고 보습에 집중하세요.",
     products: [
       {
+        type: "토너",
         name: "[아비브] 어성초 카밍 토너 스킨부스터",
         price: "24,000원",
         image: "/products/abib_toner.jpg"
       },
       {
+        type: "수분크림",
         name: "[라로슈포제] 시카플라스트 밤 B5",
         price: "32,000원",
         image: "/products/laroche_cicaplast.jpg"
+      },
+      {
+        type: "로션",
+        name: "[아토팜] 탑투토 지성 로션",
+        price: "22,000원",
+        image: "/products/atopalm_lotion.jpg"
       }
     ]
   },
@@ -25,17 +33,25 @@ export const skinTypes = {
   "건성 2번": {
     id: 2,
     name: "건성 2번",
-    description: "건성 2번 타입 피부는 수분 부족으로 인해 건조함이 두드러지고, 착색도가 높아 색소침착이 고민이 될 수 있는 피부 유형입니다. 충분한 수분 공급과 보습을 통해 피부 장벽을 강화하는 것이 중요합니다. 나이아신아마이드 성분이 포함된 미백 기능성 화장품을 사용하면 색소침착 완화에 도움이 됩니다. 건성 피부는 쉽게 자극받기 쉬우므로, 자극이 적은 약산성 세안제와 고보습 크림을 사용하는 것이 좋습니다. 또한, 외출 시에는 자외선 차단제를 반드시 사용해 색소침착이 심화되는 것을 예방해야 합니다. 특히, 밤에는 영양이 풍부한 수면 팩을 사용해 피부를 촉촉하게 유지하는 것이 도움이 됩니다.",
+    description: "건조하고 착색이 잘 되지만 민감하지 않은 피부타입입니다. 풍부한 보습제와 함께 미백 기능성 제품 사용이 도움이 됩니다.",
     products: [
       {
-        name: "[이니스프리] 그린티 씨드 세럼",
-        price: "29,000원",
-        image: "/products/innisfree_serum.jpg"
+        type: "토너",
+        name: "[이니스프리] 그린티 씨드 토너",
+        price: "18,000원",
+        image: "/products/innisfree_toner.jpg"
       },
       {
-        name: "[코스알엑스] 갈락토미세스 에센스",
+        type: "수분크림",
+        name: "[이니스프리] 그린티 씨드 크림",
+        price: "29,000원",
+        image: "/products/innisfree_cream.jpg"
+      },
+      {
+        type: "로션",
+        name: "[코스알엑스] 갈락토미세스 로션",
         price: "28,000원",
-        image: "/products/cosrx_essence.jpg"
+        image: "/products/cosrx_lotion.jpg"
       }
     ]
   },
@@ -174,14 +190,22 @@ export const skinTypes = {
     description: "지성 2번 타입의 피부는 피지 분비량이 많아 유분기로 인한 고민이 생기기 쉬운 피부 유형입니다. 피지 때문에 모공이 막혀 여드름이나 일시적인 뾰루지가 발생하기 쉬우므로",
     products: [
       {
-        name: "[코스알엑스] BHA 블랙헤드 파워 리퀴드",
-        price: "21,000원",
-        image: "/products/cosrx_bha.jpg"
+        type: "토너",
+        name: "[아비브] 어성초 카밍 토너 스킨부스터",
+        price: "24,000원",
+        image: "https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/550/10/0000/0015/A00000015525319ko.jpg?l=ko"
       },
       {
-        name: "[메디힐] 티트리 에센셜 마스크",
-        price: "10,000원",
-        image: "/products/mediheal_mask.jpg"
+        type: "수분크림",
+        name: "[라로슈포제] 시카플라스트 밤 B5",
+        price: "32,000원",
+        image: "https://img.danawa.com/prod_img/500000/016/294/img/3294016_1.jpg?_v=20191202160042"
+      },
+      {
+        type: "로션",
+        name: "[아토팜] 탑투토 지성 로션",
+        price: "22,000원",
+        image: "https://m.toptotoe.kr/web/product/medium/201804/393_shop1_899210.jpg"
       }
     ]
   },
