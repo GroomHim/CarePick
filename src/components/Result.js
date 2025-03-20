@@ -39,9 +39,9 @@ export default function ResultPage() {
         <img
           src="/logo.svg"
           alt="Logo"
-          width="199"
-          height="30"
-          style={{ display: "block", margin: "30px auto" }}
+          width="170"
+          height="26"
+          style={{ display: "block", margin: "15px auto" }}
         />
         <button className={styles.skinTypeButton} onClick={handleGoToHome}>
           피부 타입 다시 검사하기
