@@ -2,6 +2,8 @@
 import styles from "../styles/Result.module.css";
 
 export default function ProductRecommendation({ products }) {
+  const appStoreLink = "https://WeareGroomHim.waveon.me"; // 사전예약링크
+
   if (!products || products.length === 0) {
     return (
       <div className={styles.productSection}>
@@ -37,6 +39,23 @@ export default function ProductRecommendation({ products }) {
             </div>
           </div>
         ))}
+      </div>
+
+      {/* 앱 링크 버튼 */}
+      <div className={styles.appLinkContainer}>
+        <a 
+          href={appStoreLink} 
+          className={styles.appLinkButton} 
+          target="_blank" 
+          rel="noopener noreferrer"
+        >
+          내 피부타입에 맞는 더 많은 제품이 궁금하다면?
+          <span className={styles.appLinkIcon}>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </span>
+        </a>
       </div>
     </div>
   );
