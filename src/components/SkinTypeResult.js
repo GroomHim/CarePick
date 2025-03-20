@@ -6,7 +6,7 @@ export default function SkinTypeResult({ typeInfo }) {
     <>
       <div className={styles.resultText}>
         <p>그룸힘님의 피부타입은</p>
-        <p>{typeInfo.id}번타입 <span className={styles.highlight}>{typeInfo.name}</span>입니다.</p>
+        <p><span className={styles.highlight}>{typeInfo.name}</span>입니다.</p>
       </div>
 
       <p className={styles.resultDescription}>
