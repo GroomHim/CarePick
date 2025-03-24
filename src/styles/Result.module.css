@@ -103,15 +103,14 @@
   letter-spacing: -0.4px;
   margin-bottom: 25px;
   margin-top: 24px;
-  height: 150px;
+  max-height: 150px;
   overflow: hidden;
   position: relative;
-  transition: height 0.3s ease;
+  transition: max-height 0.3s ease;
 }
 
 .resultDescription.expanded {
-  height: auto;
-  max-height: 500px;
+  max-height: none;
 }
 
 .resultDescription p {
@@ -134,6 +133,16 @@
   border-radius: 4px;
   transition: all 0.2s ease;
   z-index: 2;
+  display: block;
+}
+
+.resultDescription.expanded .readMoreButton {
+  position: relative;
+  bottom: auto;
+  left: auto;
+  transform: none;
+  margin: 10px auto 0;
+  display: block;
 }
 
 .readMoreButton:hover {

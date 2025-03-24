@@ -33,7 +33,7 @@ export default function SkinTypeResult({ typeInfo }) {
       >
         <p>{typeInfo.description}</p>
         {showMoreButton && (
-          <button 
+          <button
             className={styles.readMoreButton} 
             onClick={toggleDescription}
           >
