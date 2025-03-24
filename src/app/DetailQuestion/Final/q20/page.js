@@ -60,10 +60,28 @@ export default function FinalQ3() {
     // 4. 최종 피부 타입 조합
     const finalSkinType = `${skinType} - ${sensitiveSkin} - ${pigmentedSkin}`;
 
-    // 5. 최종 결과를 localStorage에 저장
-    localStorage.setItem("finalSkinType", finalSkinType);
+    // 5. 최종 피부 타입 매칭 (1~12번)
+    const skinTypeMap = {
+      "Oily - Sensitive - Pigmented"        : "지성 1번",
+      "Oily - Resistant - Pigmented"        : "지성 2번",
+      "Oily - Sensitive - Non-Pigmented"    : "지성 3번",
+      "Oily - Resistant - Non-Pigmented"    : "지성 4번",
+      "Neutral - Sensitive - Pigmented"     : "중성 1번",
+      "Neutral - Resistant - Pigmented"     : "중성 2번",
+      "Neutral - Sensitive - Non-Pigmented" : "중성 3번",
+      "Neutral - Resistant - Non-Pigmented" : "중성 4번",
+      "Dry - Sensitive - Pigmented"         : "건성 1번",
+      "Dry - Resistant - Pigmented"         : "건성 2번",
+      "Dry - Sensitive - Non-Pigmented"     : "건성 3번",
+      "Dry - Resistant - Non-Pigmented"     : "건성 4번",
+    };
 
-    // 6. 콘솔에 최종 피부 타입 출력
+    const finalResult = skinTypeMap[finalSkinType];
+
+    // 6. 최종 결과를 localStorage에 저장
+    localStorage.setItem("finalSkinType", finalResult);
+
+    // 7. 콘솔에 최종 피부 타입 출력
     console.log(`최종 피부 타입: ${finalSkinType}`);
     console.log(`피부 타입: ${skinType}`);
     console.log(`예민도: ${sensitiveSkin}`);
