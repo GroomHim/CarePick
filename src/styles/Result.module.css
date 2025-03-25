@@ -150,7 +150,8 @@
   text-decoration: underline;
 }
 
-.resultDescription:not(.expanded)::after {
+/* 더보기 버튼이 있을 때만 그라데이션 효과 적용 */
+.resultDescription:has(.readMoreButton):not(.expanded)::after {
   content: '';
   position: absolute;
   bottom: 0;

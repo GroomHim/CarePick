@@ -7,7 +7,7 @@ export const skinTypes = {
   "건성 1번": {
     id: 1,
     name: "건성 1번",
-    description: "건성 1번 타입 피부는 건성으로 인해 수분이 부족하고, 피부가 예민하여 외부 자극에 민감하게 반응할 수 있는 유형입니다. 또한 착색도가 높아 색소침착이 발생하기 쉬운 특징이 있습니다. 이러한 피부는 수분 공급과 진정 케어에 특히 집중해야 하며, 촉촉함을 유지할 수 있는 고보습 제품을 사용하는 것이 중요합니다. 나이아신아마이드와 같은 미백 성분이 포함된 화장품을 사용하면 색소침착 완화에 도움이 됩니다. 피부가 예민하기 때문에 자극이 적은 약산성 제품을 선택하고, 레티놀 등 강한 기능성 성분을 사용할 때는 저농도부터 시작해 피부 적응 과정을 거치는 것이 좋습니다. 외출 시에는 자외선 차단제를 필수적으로 사용해 추가적인 착색을 방지해야 합니다. 또한, 수분과 영양을 동시에 공급할 수 있는 나이트 크림이나 수면 팩을 활용해 밤 사이 피부 장벽을 강화하는 것도 좋은 방법입니다.",
+    description: "<span style='color:rgb(68, 171, 255); font-weight: bold;'>건성, 예민, 착색도 높</span>은 1번 타입 피부는 <span style='color:rgb(68, 171, 255); font-weight: bold;'>수분 부족으로 인해 건조함을 자주 느끼며, 외부 자극에 민감하게 반응</span>할 수 있는 유형입니다. 또한 <span style='color:rgb(68, 171, 255); font-weight: bold;'>착색도가 높아 색소침착이 쉽게 발생</span>할 수 있습니다. 이러한 피부는 <span style='color:rgb(68, 171, 255); font-weight: bold;'>수분 공급과 진정 케어에 특히 집중</span>해야 하며, <span style='color:rgb(68, 171, 255); font-weight: bold;'>촉촉함을 유지할 수 있는 고보습 제품</span>을 사용하는 것이 중요합니다. <span style='color:rgb(68, 171, 255); font-weight: bold;'>나이아신아마이드</span>를 사용하면 색소침착 완화에 도움이 됩니다. <span style='color:rgb(255, 107, 107); font-weight: bold;'>자극이 적은 약산성 제품을 선택하고, 레티놀은 저농도부터 시작</span>해야 합니다. <span style='color:rgb(255, 107, 107); font-weight: bold;'>외출 시에는 자외선 차단제를 필수적으로 사용</span>해 추가적인 착색을 방지해야 합니다. 또한, <span style='color:rgb(68, 171, 255); font-weight: bold;'>나이트 크림이나 수면 팩으로 밤 사이 피부 장벽을 강화</span>하는 것도 좋은 방법입니다.",
     products: [
       {
         type: "앰플",
@@ -35,7 +35,7 @@ export const skinTypes = {
   "건성 2번": {
     id: 2,
     name: "건성 2번",
-    description: "건성 2번 피부는 수분 부족으로 인해 건조함이 두드러지고, 착색도가 높아 색소침착이 고민이 될 수 있는 피부 유형입니다. 충분한 수분 공급과 보습을 통해 피부 장벽을 강화하는 것이 중요합니다. 나이아신아마이드 성분이 포함된 미백 기능성 화장품을 사용하면 색소침착 완화에 도움이 됩니다. 건성 피부는 쉽게 자극받기 쉬우므로, 자극이 적은 약산성 세안제와 고보습 크림을 사용하는 것이 좋습니다. 또한, 외출 시에는 자외선 차단제를 반드시 사용해 색소침착이 심화되는 것을 예방해야 합니다. 특히, 밤에는 영양이 풍부한 수면 팩을 사용해 피부를 촉촉하게 유지하는 것이 도움이 됩니다.",
+    description: "<span style='color:rgb(68, 171, 255); font-weight: bold;'>건성, 착색도 높</span>은 2번 피부는 <span style='color:rgb(68, 171, 255); font-weight: bold;'>건조함과 색소침착이 고민</span>이 될 수 있는 피부 유형입니다. <span style='color:rgb(68, 171, 255); font-weight: bold;'>피부 장벽 강화</span>가 중요하며, <span style='color:rgb(68, 171, 255); font-weight: bold;'>나이아신아마이드</span>를 사용하면 색소침착 완화에 도움이 됩니다. <span style='color:rgb(255, 107, 107); font-weight: bold;'>자극이 적은 약산성 세안제와 고보습 크림 사용</span>이 좋습니다. 또한, <span style='color:rgb(255, 107, 107); font-weight: bold;'>자외선 차단제로 색소침착 예방</span>이 필요합니다. 특히, <span style='color:rgb(68, 171, 255); font-weight: bold;'>영양이 풍부한 수면 팩</span>으로 피부를 관리하면 좋습니다. <span style='color:rgb(68, 171, 255); font-weight: bold;'>피부 턴오버 주기에 맞춰 자신에게 적합한 화장품을 찾아 꾸준히 사용</span>하는 것이 중요합니다.",
     products: [
       {
         type: "세럼",
@@ -63,7 +63,7 @@ export const skinTypes = {
   "건성 3번": {
     id: 3,
     name: "건성 3번",
-    description: "건성 3번 피부는 수분 부족으로 인한 건조함과 함께 예민한 피부로 외부 자극에 민감하게 반응하지만, 착색도는 낮아 비교적 깨끗한 피부 톤을 유지하는 편입니다. 피부 진정을 위한 약산성 제품과 함께 수분 공급이 잘되는 보습제를 사용하는 것이 중요합니다. 레티놀과 같은 기능성 성분은 낮은 농도부터 천천히 사용해 피부 적응 과정을 거치며 사용해야 합니다. 외부 자극을 최소화하기 위해 물리적인 각질 제거보다는 수분 공급과 진정을 우선시하는 스킨케어 루틴을 권장합니다.",
+    description: "<span style='color:rgb(68, 171, 255); font-weight: bold;'>건성, 예민, 착색도 낮</span>은 3번 피부는 <span style='color:rgb(68, 171, 255); font-weight: bold;'>건조하고 예민하지만, 착색도는 낮은</span> 편입니다. <span style='color:rgb(68, 171, 255); font-weight: bold;'>약산성 제품과 보습제</span>를 사용하는 것이 중요합니다. <span style='color:rgb(255, 107, 107); font-weight: bold;'>레티놀은 낮은 농도부터 천천히 사용</span>해야 합니다. <span style='color:rgb(68, 171, 255); font-weight: bold;'>물리적 각질 제거는 피하고 수분 공급에 집중</span>하는 것이 좋습니다. <span style='color:rgb(68, 171, 255); font-weight: bold;'>피부 장벽을 강화할 수 있는 진정 효과가 있는 제품</span>을 선택하는 것이 중요합니다. <span style='color:rgb(255, 107, 107); font-weight: bold;'>자외선 차단제는 필수적으로 사용</span>하여 피부 손상을 예방해야 합니다.",
     products: [
       {
         type: "수분크림",
@@ -122,7 +122,7 @@ export const skinTypes = {
   "중성 1번": {
     id: 5,
     name: "중성 1번",
-    description: "중성 1번 타입 피부는 유분과 수분의 균형이 잘 맞아 있기 때문에, 이러한 밸런스를 유지하는 것이 중요합니다. 그러나 피부가 민감해 사용하는 제품에 따라 피부 상태가 크게 달라질 수 있으므로, 화장품 선택에 신중해야 합니다. 만약 맞지 않는 화장품 사용으로 인해 피부에 일시적인 반응이 나타나기 쉬운 유형이며, 이때 적절한 미백 및 관리가 이루어지지 않으면 흔적이 남을 수 있으므로, 초기부터 진정 효과가 있는 화장품을 사용하는 것이 중요합니다. 민감성 피부에 적합한 제품과 나이아신아마이드 성분이 포함된 착색 개선 화장품을 사용하는 것이 좋습니다. 또한, 레티놀 성분은 미백과 피부결 개선에 효과적이지만, 예민한 피부에는 주의가 필요합니다.",
+    description: "<span style='color:rgb(68, 171, 255); font-weight: bold;'>중성, 예민, 착색도 높</span>은 5번 타입 피부는 <span style='color:rgb(68, 171, 255); font-weight: bold;'>유분과 수분의 균형이 잘 맞아 있기 때문에, 이러한 밸런스를 유지하는 것이 중요</span>합니다. 그러나 <span style='color:rgb(255, 107, 107); font-weight: bold;'>피부가 민감해 사용하는 제품에 따라 피부 상태가 크게 달라질 수 있으므로, 화장품 선택에 신중</span>해야 합니다. <span style='color:rgb(255, 107, 107); font-weight: bold;'>만약 맞지 않는 화장품 사용으로 인해 피부에 일시적인 반응이 나타나기 쉬운 유형이며, 이때 적절한 미백 및 관리가 이루어지지 않으면 흔적이 남을 수 있으므로, 초기부터 진정 효과가 있는 화장품을 사용하는 것이 중요</span>합니다. <span style='color:rgb(68, 171, 255); font-weight: bold;'>민감성 피부에 적합한 제품과 나이아신아마이드 성분이 포함된 착색 개선 화장품</span>을 사용하는 것이 좋습니다. 또한, <span style='color:rgb(255, 107, 107); font-weight: bold;'>레티놀 성분은 미백과 피부결 개선에 효과적이지만, 예민한 피부에는 주의</span>가 필요합니다.",
     products: [
       {
         type: "토너",
@@ -151,7 +151,7 @@ export const skinTypes = {
   "중성 2번": {
     id: 6,
     name: "중성 2번",
-    description: "중성 2번 피부는 유분과 수분의 균형이 잘 맞는 중성 타입이지만, 착색도가 높아 색소침착이 고민이 될 수 있는 피부 유형입니다. 이러한 피부는 밸런스를 유지하면서도 착색 관리에 중점을 둔 화장품 선택이 중요합니다. 레티놀이나 나이아신아마이드 성분이 포함된 기능성 화장품을 사용하면 미백 및 피부결 개선에 도움이 되며, 피부 개선 효과를 크게 느낄 수 있습니다. 또한, 피부 턴오버 주기에 맞춰 자신에게 적합한 화장품을 찾아 꾸준히 사용하는 것이 필요합니다. 외출 시에는 자외선 차단제를 철저히 발라 색소침착이 더 심해지지 않도록 주의하는 것도 중요합니다.",
+    description: "<span style='color:rgb(68, 171, 255); font-weight: bold;'>중성, 착색도 높</span>은 6번 타입 피부는 <span style='color:rgb(68, 171, 255); font-weight: bold;'>유분과 수분의 균형이 잘 맞는 중성 타입이지만, 착색도가 높아 색소침착이 고민이 될 수 있는 피부 유형</span>입니다. <span style='color:rgb(68, 171, 255); font-weight: bold;'>이러한 피부는 밸런스를 유지하면서도 착색 관리에 중점을 둔 화장품 선택이 중요</span>합니다. <span style='color:rgb(68, 171, 255); font-weight: bold;'>레티놀이나 나이아신아마이드 성분이 포함된 기능성 화장품을 사용하면 미백 및 피부결 개선에 도움이 되며, 피부 개선 효과를 크게 느낄 수 있습니다</span>. 또한, <span style='color:rgb(68, 171, 255); font-weight: bold;'>피부 턴오버 주기에 맞춰 자신에게 적합한 화장품을 찾아 꾸준히 사용하는 것이 필요</span>합니다. <span style='color:rgb(255, 107, 107); font-weight: bold;'>외출 시에는 자외선 차단제를 철저히 발라 색소침착이 더 심해지지 않도록 주의</span>하는 것도 중요합니다.",
     products: [
       {
         type: "토너",
@@ -172,7 +172,7 @@ export const skinTypes = {
         name: "에스트라 아토베리어 365 하이드로 수딩 크림",
         price: "21,000원",
         image: "https://thumbnail10.coupangcdn.com/thumbnails/remote/320x320ex/image/1025_amir_coupang_oct_80k/8e22/38117f31fb6fc0fa1574336e525c25b7c06940280513ab08821d5b9bb9b3.jpg",
-        purchaseLink: "https://www.coupang.com/vp/products/5569921264?itemId=18195514395&vendorItemId=86293668349&pickType=COU_PICK&q=%EC%97%90%EC%8A%A4%ED%8A%B8%EB%9D%BC+%EC%95%84%ED%86%A0%EB%B2%A0%EB%A6%AC%EC%96%B4+%ED%95%98%EC%9D%B4%EB%93%9C%EB%A1%9C+%EC%88%98%EB%94%A9%ED%81%AC%EB%A6%BC&itemsCount=36&searchId=005f2a5a691306&rank=0&searchRank=0&isAddedCart="
+        purchaseLink: "https://www.coupang.com/vp/products/5569921264?itemId=18195514395&vendorItemId=86293668349&pickType=COU_PICK&q=%EC%97%90%EC%8A%A4%ED%8A%B8%EB%9D%BC+%EC%95%84%ED%86%A0%EB%B2%A0%EB%A6%AC%EC%96%B4+%ED%95%98%EC%9D%B4%EB%93%9C%EB%9D%BC+%EC%88%98%EB%94%A9%ED%81%AC%EB%A6%BC&itemsCount=36&searchId=005f2a5a691306&rank=0&searchRank=0&isAddedCart="
       }
     ]
   },
@@ -180,7 +180,7 @@ export const skinTypes = {
   "중성 3번": {
     id: 7,
     name: "중성 3번",
-    description: "중성 3번 피부는 유분과 수분의 균형이 잘 맞아 있어 이러한 밸런스를 유지하는 것이 중요합니다. 그러나 피부가 민감해 사용하는 제품에 따라 피부 상태가 크게 달라질 수 있으므로, 화장품 선택에 신중해야 합니다. 특히 맞지 않는 화장품을 사용했을 때 피부에 일시적인 반응이 나타날 수 있으며, 적절한 미백 및 관리가 이루어지지 않으면 흔적이 남을 수 있습니다. 따라서 초기부터 진정 효과가 있는 화장품을 사용해 피부를 보호하는 것이 중요합니다. 민감성 피부에 적합한 제품을 사용하는 꾸준한 관리가 필요합니다.",
+    description: "<span style='color:rgb(68, 171, 255); font-weight: bold;'>중성, 예민, 착색도 낮</span>은 7번 타입 피부는 <span style='color:rgb(68, 171, 255); font-weight: bold;'>유분과 수분의 균형이 잘 맞아 있어 이러한 밸런스를 유지하는 것이 중요</span>합니다. 그러나 <span style='color:rgb(255, 107, 107); font-weight: bold;'>피부가 민감해 사용하는 제품에 따라 피부 상태가 크게 달라질 수 있으므로, 화장품 선택에 신중</span>해야 합니다. <span style='color:rgb(255, 107, 107); font-weight: bold;'>특히 맞지 않는 화장품을 사용했을 때 피부에 일시적인 반응이 나타날 수 있으며, 적절한 미백 및 관리가 이루어지지 않으면 흔적이 남을 수 있습니다</span>. 따라서 <span style='color:rgb(68, 171, 255); font-weight: bold;'>초기부터 진정 효과가 있는 화장품을 사용해 피부를 보호하는 것이 중요</span>합니다. <span style='color:rgb(68, 171, 255); font-weight: bold;'>민감성 피부에 적합한 제품을 사용하는 꾸준한 관리</span>가 필요합니다.",
     products: [
       {
         type: "토너",
@@ -209,7 +209,7 @@ export const skinTypes = {
   "중성 4번": {
     id: 8,
     name: "중성 4번",
-    description: "중성 4번 피부는 유분과 수분의 균형이 잘 맞는 중성 타입으로, 착색도가 낮아 비교적 깨끗한 피부 톤을 유지하고 있는 것이 특징입니다. 그러나 이러한 밸런스를 유지하기 위해서는 피부 관리에 소홀하지 않아야 합니다. 피부 턴오버 주기에 맞춰 자신에게 적합한 화장품을 사용하는 것이 중요하며, 레티놀이나 나이아신아마이드 성분이 포함된 기능성 화장품을 사용하면 피부결 개선과 건강한 광택 유지에 도움이 됩니다. 특히 수분 공급과 자외선 차단을 철저히 하여 피부 손상을 예방하는 것이 좋습니다. 또한, 피부 상태를 주기적으로 점검하여 필요한 경우 미백이나 진정 케어 제품을 보완해 사용하면 더욱 안정적인 피부 컨디션을 유지할 수 있습니다.",
+    description: "<span style='color:rgb(68, 171, 255); font-weight: bold;'>중성, 착색도 낮</span>은 8번 타입 피부는 <span style='color:rgb(68, 171, 255); font-weight: bold;'>유분과 수분의 균형이 잘 맞는 중성 타입으로, 착색도가 낮아 비교적 깨끗한 피부 톤을 유지하고 있는 것이 특징</span>입니다. 그러나 <span style='color:rgb(68, 171, 255); font-weight: bold;'>이러한 밸런스를 유지하기 위해서는 피부 관리에 소홀하지 않아야 합니다</span>. <span style='color:rgb(68, 171, 255); font-weight: bold;'>피부 턴오버 주기에 맞춰 자신에게 적합한 화장품을 사용하는 것이 중요하며, 레티놀이나 나이아신아마이드 성분이 포함된 기능성 화장품을 사용하면 피부결 개선과 건강한 광택 유지에 도움이 됩니다</span>. <span style='color:rgb(68, 171, 255); font-weight: bold;'>특히 수분 공급과 자외선 차단을 철저히 하여 피부 손상을 예방하는 것이 좋습니다</span>. 또한, <span style='color:rgb(68, 171, 255); font-weight: bold;'>피부 상태를 주기적으로 점검하여 필요한 경우 미백이나 진정 케어 제품을 보완해 사용하면 더욱 안정적인 피부 컨디션을 유지할 수 있습니다</span>.",
     products: [
       {
         type: "토너",
@@ -239,7 +239,7 @@ export const skinTypes = {
   "지성 1번": {
     id: 9,
     name: "지성 1번",
-    description: "지성 1번 타입의 피부는 피지 분비량이 많아 유분기로 인한 고민이 생기기 쉬운 피부 유형입니다. 피부 반응이 민감하기 때문에 사용하는 제품에 따라 피부 상태가 크게 좌우되므로, 화장품 선택에 신중을 기해야 합니다. 또한 여드름 상처나 뾰루지 자국이 남아 착색 관리도 필요합니다. 민감성 피부에 적합한 제품과 나이아신아마이드 성분이 포함된 착색 개선 화장품을 사용하는 것이 좋습니다. 레티놀 성분은 미백 및 피부결 개선에 도움이 될 수 있지만, 예민한 피부에는 주의가 필요합니다.",
+    description: "<span style='color:rgb(68, 171, 255); font-weight: bold;'>지성, 예민, 착색도 높</span>은 1번 타입의 피부는 <span style='color:rgb(68, 171, 255); font-weight: bold;'>피지 분비량이 많아 유분기로 인한 고민</span>이 생기기 쉬운 피부 유형입니다. <span style='color:rgb(255, 107, 107); font-weight: bold;'>피부 반응이 민감하기 때문에 사용하는 제품에 따라 피부 상태가 크게 좌우</span>되므로, 화장품 선택에 신중을 기해야 합니다. 또한 <span style='color:rgb(68, 171, 255); font-weight: bold;'>여드름 상처나 뾰루지 자국이 남아 착색 관리</span>도 필요합니다. <span style='color:rgb(68, 171, 255); font-weight: bold;'>민감성 피부에 적합한 제품과 나이아신아마이드 성분</span>이 포함된 착색 개선 화장품을 사용하는 것이 좋습니다. <span style='color:rgb(255, 107, 107); font-weight: bold;'>레티놀 성분은 미백 및 피부결 개선에 도움이 될 수 있지만, 예민한 피부에는 주의</span>가 필요합니다.",
     products: [
       {
         type: "토너",
@@ -268,7 +268,7 @@ export const skinTypes = {
   "지성 2번": {
     id: 10,
     name: "지성 2번",
-    description: "지성 2번 타입의 피부는 피지 분비량이 많아 유분기로 인한 고민이 생기기 쉬운 피부 유형입니다. 피지 때문에 모공이 막혀 여드름이나 일시적인 뾰루지가 발생하기 쉬우므로, 세안에 신경을 쓰며 피부 관리를 해야 합니다. 특히 여드름이 생긴 후 적절한 미백 및 관리가 이루어지지 않으면 흔적이 영구적으로 남을 수 있으므로, 비위생적으로 여드름을 짜지 않고 초기부터 패치나 진정용 화장품을 사용하는 것이 중요합니다. 예방 뿐만 아니라 사후 관리에도 주의를 기울여야 합니다. 2번 타입의 경우 세안과 여드름 관리만 잘해도 피부 개선 효과를 확실히 느낄 수 있습니다.",
+    description: "<span style='color:rgb(68, 171, 255); font-weight: bold;'>지성, 착색도 높</span>은 2번 타입의 피부는 <span style='color:rgb(68, 171, 255); font-weight: bold;'>피지 분비량이 많아 유분기로 인한 고민</span>이 생기기 쉬운 피부 유형입니다. <span style='color:rgb(68, 171, 255); font-weight: bold;'>레티놀, 나이아신아마이드</span> 성분이 효과적이며, <span style='color:rgb(68, 171, 255); font-weight: bold;'>꾸준한 관리</span>가 중요합니다. <span style='color:rgb(255, 107, 107); font-weight: bold;'>자외선 차단</span>으로 색소침착을 예방해야 합니다.",
     products: [
       {
         type: "토너",
@@ -297,7 +297,7 @@ export const skinTypes = {
   "지성 3번": {
     id: 11,
     name: "지성 3번",
-    description: "지성 3번 타입 피부는 피지 분비량이 많아 유분기로 고민이 생기기 쉬운 유형입니다. 또한 피부가 민감하여 사용하는 제품에 따라 피부 상태가 크게 달라질 수 있으므로, 화장품 선택에 신중해야 합니다. 지용성과 민감성을 동시에 고려한 전용 화장품을 사용하는 것이 추천됩니다. 레티놀 성분은 미백 및 피부결 개선에 효과적일 수 있지만, 예민한 피부에는 주의가 필요합니다. 세안 시 피부가 지나치게 건조해지지 않도록 미온수로 세안한 후 즉시 수분을 보충해 주는 것이 중요합니다.",
+    description: "<span style='color:rgb(68, 171, 255); font-weight: bold;'>지성, 예민, 착색도 낮</span>은 3번 피부는 <span style='color:rgb(68, 171, 255); font-weight: bold;'>피지 분비량이 많아 유분기로 고민</span>이 생기기 쉬운 유형입니다. 또한 <span style='color:rgb(255, 107, 107); font-weight: bold;'>피부가 민감해 사용하는 제품에 따라 피부 상태가 크게 달라질 수 있으므로, 화장품 선택에 신중</span>해야 합니다. <span style='color:rgb(68, 171, 255); font-weight: bold;'>지용성과 민감성을 동시에 고려한 전용 화장품</span>을 사용하는 것이 추천됩니다. <span style='color:rgb(255, 107, 107); font-weight: bold;'>레티놀 성분은 미백 및 피부결 개선에 효과적일 수 있지만, 예민한 피부에는 주의</span>가 필요합니다. <span style='color:rgb(68, 171, 255); font-weight: bold;'>세안 시 피부가 지나치게 건조해지지 않도록 미온수로 세안한 후 즉시 수분을 보충해 주는 것이 중요</span>합니다.",
     products: [
       {
         type: "토너",
@@ -326,7 +326,7 @@ export const skinTypes = {
   "지성 4번": {
     id: 12,
     name: "지성 4번",
-    description: "지성 4번 타입 피부는 피지 분비량이 많아 유분기로 인한 고민이 생기기 쉬운 피부 유형입니다. 피지로 인해 모공이 막혀 여드름이나 뾰루지가 발생할 수 있으므로, 세안에 특히 신경을 써야 하며 약산성 세안제를 사용하는 것이 좋습니다. 또한, 레티놀이나 나이아신아마이드 성분이 포함된 기능성 화장품을 사용하면 피부 개선 효과를 크게 느낄 수 있습니다. 피부 턴오버 주기에 맞춰 자신에게 적합한 화장품을 찾아가는 꾸준한 관리가 필요합니다.",
+    description: "<span style='color:rgb(68, 171, 255); font-weight: bold;'>지성, 착색도 낮</span>은 4번 타입 피부는 <span style='color:rgb(68, 171, 255); font-weight: bold;'>피지 분비량이 많아 유분기로 인한 고민</span>이 생기기 쉬운 피부 유형입니다. <span style='color:rgb(255, 107, 107); font-weight: bold;'>피지로 인해 모공이 막혀 여드름이나 뾰루지가 발생할 수 있으므로, 세안에 특히 신경을 써야 하며 약산성 세안제를 사용</span>하는 것이 좋습니다. 또한, <span style='color:rgb(68, 171, 255); font-weight: bold;'>레티놀이나 나이아신아마이드 성분이 포함된 기능성 화장품을 사용하면 피부 개선 효과를 크게 느낄 수 있습니다</span>. <span style='color:rgb(68, 171, 255); font-weight: bold;'>피부 턴오버 주기에 맞춰 자신에게 적합한 화장품을 찾아가는 꾸준한 관리</span>가 필요합니다.",
     products: [
       {
         type: "클렌징 폼",
@@ -340,7 +340,7 @@ export const skinTypes = {
         name: "어퓨 마데카소사이트 플루이드",
         price: "20,000원",
         image: "https://thumbnail9.coupangcdn.com/thumbnails/remote/320x320ex/image/vendor_inventory/27ac/565954fb96bb683c61e78b571df6e9b7bfadda5b3812d47b07ae304d7219.jpg",
-        purchaseLink: "https://www.coupang.com/vp/products/7270815575?itemId=17647498535&vendorItemId=84813112588&q=어퓨+마데카소사이트+플루이드&itemsCount=36&searchId=0e6070071350538&rank=1&searchRank=1&isAddedCart="
+        purchaseLink: "https://www.coupang.com/vp/products/7270815575?itemId=17647498535&vendorItemId=84813112588&q=%ED%86%A0%EB%A6%AC%EB%93%A0+%EC%84%B8%EB%9F%BC&itemsCount=36&searchId=0e6070071350538&rank=1&searchRank=1&isAddedCart="
       },
       {
         type: "스킨",
