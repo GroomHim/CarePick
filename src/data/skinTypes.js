@@ -13,19 +13,19 @@ export const skinTypes = {
         type: "앰플",
         name: "라운드랩 소나무 진정 시카 앰플, 30ml,",
         price: "24,000원",
-        image: "https://d33ur1yh5ph6b5.cloudfront.net/52fe9ac2-ee08-4824-b85a-70d4352a56dd-mid"
+        image: "https://thumbnail7.coupangcdn.com/thumbnails/remote/320x320ex/image/retail/images/344522546885153-436fab76-0284-4a11-b164-2c1b64e56136.jpg"
       },
       {
         type: "크림(밤)",
         name: "아비노베이비 더멕사 아토 크림, 206g",
         price: "32,000원",
-        image: "https://d33ur1yh5ph6b5.cloudfront.net/52fe9ac2-ee08-4824-b85a-70d4352a56dd-mid"
+        image: "https://thumbnail6.coupangcdn.com/thumbnails/remote/320x320ex/image/vendor_inventory/6ea3/97e79698865af1fdc89ec863003329a41ed686c022256a912c709161cdd0.jpg"
       },
       {
         type: "썬크림",
         name: "후시다인 더마 트러블 징크 카밍 선크림 SPF50+",
         price: "22,000원",
-        image: "https://d33ur1yh5ph6b5.cloudfront.net/52fe9ac2-ee08-4824-b85a-70d4352a56dd-mid"
+        image: "https://thumbnail9.coupangcdn.com/thumbnails/remote/320x320ex/image/retail/images/877fc830-a115-4d11-a53d-4665b8a46ca46941534804648332185.png"
       }
     ]
   },
@@ -38,19 +38,19 @@ export const skinTypes = {
         type: "세럼",
         name: "MEDIHEAL 마데카소사이드 흔적 리페어 세럼",
         price: "18,000원",
-        image: "https://d33ur1yh5ph6b5.cloudfront.net/52fe9ac2-ee08-4824-b85a-70d4352a56dd-mid"
+        image: "https://thumbnail9.coupangcdn.com/thumbnails/remote/320x320ex/image/vendor_inventory/67e4/16a7480afc6981a6284be800df089db1d977e46dc5bbb5b5f31bd1fe9bc7.jpg"
       },
       {
         type: "앰플",
         name: "디오디너리 나이아신아마이드 10% 플러스 징크 1% 30ml",
         price: "29,000원",
-        image: "https://d33ur1yh5ph6b5.cloudfront.net/52fe9ac2-ee08-4824-b85a-70d4352a56dd-mid"
+        image: "https://thumbnail8.coupangcdn.com/thumbnails/remote/320x320ex/image/vendor_inventory/e810/a52f66e43a8b366da15bd95304a1a25817d9c168f32ec54c2d90f000e42b.jpg"
       },
       {
         type: "크림(밤)",
         name: "라로슈포제 NEW 시카플라스트 밤 B5+ 크림, 40ml",
         price: "28,000원",
-        image: "https://d33ur1yh5ph6b5.cloudfront.net/52fe9ac2-ee08-4824-b85a-70d4352a56dd-mid"
+        image: "https://thumbnail7.coupangcdn.com/thumbnails/remote/320x320ex/image/retail/images/1396603848785386-845ff6be-3c8f-4638-a23c-211497ebcf8a.jpg"
       }
     ]
   },
@@ -61,21 +61,21 @@ export const skinTypes = {
     products: [
       {
         type: "수분크림",
-        name: "라운드랩 1025 독도 크림, 80ml,",
+        name: "라운드랩 1025 독도 크림, 80ml",
         price: "17,900원",
-        image: "https://d33ur1yh5ph6b5.cloudfront.net/52fe9ac2-ee08-4824-b85a-70d4352a56dd-mid"
+        image: "https://thumbnail9.coupangcdn.com/thumbnails/remote/320x320ex/image/retail/images/1747373455775572-0d6a773a-8ae9-4957-89f1-2d9c4e5ca52a.jpg"
       },
       {
         type: "세럼",
-        name: "에스트라 에이시카365 진정 세럼, 40ml,",
+        name: "에스트라 에이시카365 진정 세럼, 40ml",
         price: "19,900원",
-        image: "https://d33ur1yh5ph6b5.cloudfront.net/52fe9ac2-ee08-4824-b85a-70d4352a56dd-mid"
+        image: "https://thumbnail8.coupangcdn.com/thumbnails/remote/320x320ex/image/retail/images/554362168190369-b6cdcabd-1f8b-4032-8282-94fae5909279.jpg"
       },
       {
         type: "크림(밤)",
         name: "에스트라 아토베리어365 크림 플러스",
         price: "26,000원",
-        image: "https://d33ur1yh5ph6b5.cloudfront.net/52fe9ac2-ee08-4824-b85a-70d4352a56dd-mid"
+        image: "https://thumbnail9.coupangcdn.com/thumbnails/remote/320x320ex/image/retail/images/318268948053996-7ad2bfde-3ba7-4d5e-a628-f256e35a4b1a.jpg"
       }
     ]
   },
@@ -89,19 +89,19 @@ export const skinTypes = {
         type: "수분크림",
         name: "일리윤 히알루론 모이스춰 수분크림, 100ml",
         price: "23,000원",
-        image: "https://d33ur1yh5ph6b5.cloudfront.net/52fe9ac2-ee08-4824-b85a-70d4352a56dd-mid"
+        image: "https://thumbnail8.coupangcdn.com/thumbnails/remote/320x320ex/image/retail/images/651764214736601-c7e98ef3-11a2-4e1e-8e63-d84554916565.jpg"
       },
       {
         type: "앰플",
-        name: "이니스프리 레티놀 시카 흔적 케어 앰플, 50ml,",
+        name: "이니스프리 레티놀 시카 흔적 케어 앰플, 50ml",
         price: "25,000원",
-        image: "https://d33ur1yh5ph6b5.cloudfront.net/52fe9ac2-ee08-4824-b85a-70d4352a56dd-mid"
+        image: "https://thumbnail10.coupangcdn.com/thumbnails/remote/320x320ex/image/vendor_inventory/9b45/6018a00387f47061e7c14ae3df48618ac2ccf1d8e6da7c5cd10c43978496.jpg"
       },
       {
         type: "크림(밤)",
         name: "라로슈포제 NEW 시카플라스트 밤 B5+ 크림, 40ml",
         price: "26,500원",
-        image: "https://d33ur1yh5ph6b5.cloudfront.net/52fe9ac2-ee08-4824-b85a-70d4352a56dd-mid"
+        image: "https://thumbnail7.coupangcdn.com/thumbnails/remote/320x320ex/image/retail/images/1396603848785386-845ff6be-3c8f-4638-a23c-211497ebcf8a.jpg"
       }
     ]
   },
