@@ -34,8 +34,13 @@ export default function ProductRecommendation({ products }) {
             </div>
             <div className={styles.productInfo}>
               <p className={styles.productName}>{product.name}</p>
-              <p className={styles.productPrice}>{product.price}</p>
-              <button className={styles.buyButton}>구매하기</button>
+              {/* <p className={styles.productPrice}>{product.price}</p> */}
+              <button 
+                className={styles.buyButton}
+                onClick={() => window.open(product.purchaseLink, '_blank', 'noopener,noreferrer')}
+              >
+                바로가기
+              </button>
             </div>
           </div>
         ))}
