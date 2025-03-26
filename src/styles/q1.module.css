@@ -2,8 +2,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  height: 100vh;
+  justify-content: center; /* ← 세로 중앙 정렬 */
+  min-height: 100vh; /* ← 콘텐츠가 더 길어질 수 있으니 height → min-height */
+  padding: 20px 0; /* ← 작을 때 상하 여백 */
   background-color: white;
 }
 
@@ -130,11 +131,12 @@
 }
 
 .optionImage {
-  width: 230px;
-  height: 200px;
-  object-fit: cover; /* ✅ 이미지 크롭 */
+  width: 100%;
+  aspect-ratio: 1 / 1; /* ✅ 1:1 비율 고정 (정사각형) */
+  object-fit: cover; /* ✅ 안 잘리게, 넘치는 부분은 crop */
   border-radius: 10px;
   border: 2px solid transparent;
+  display: block;
 }
 .optionImage:hover {
   border: 2px solid rgb(176, 176, 176);
@@ -150,4 +152,104 @@
   font-weight: 600; /* 가독성을 유지하면서 줄이기 */
   text-align: center; /* 가운데 정렬 */
   line-height: 1.4; /* 줄 간격 조정 */
+}
+
+/* ✅ 반응형: 태블릿 */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 16px;
+    height: auto;
+  }
+
+  .questionBox,
+  .surveyBox {
+    width: 100%;
+    font-size: 20px;
+    height: auto;
+    padding: 16px;
+  }
+
+  .progress {
+    font-size: 12px;
+  }
+
+  .subText {
+    font-size: 18px;
+  }
+
+  .option {
+    font-size: 18px;
+    height: 50px;
+  }
+
+  .optionsGrid {
+    grid-template-columns: 1fr; /* 1열로 줄이기 */
+    gap: 8px;
+  }
+
+  .optionsGridFinal {
+    grid-template-columns: 2fr; /* 2열 정렬로 조정 */
+    gap: 0px;
+  }
+
+  .buttonContainer {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .prevButton,
+  .nextButton {
+    width: 100%;
+    height: 45px;
+    font-size: 18px;
+  }
+
+  .imageGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .optionImage {
+    width: 100%;
+    height: auto;
+  }
+
+  .longQuestion {
+    font-size: 20px;
+    padding: 0 10px;
+  }
+}
+
+/* ✅ 반응형: 모바일 */
+@media (max-width: 480px) {
+  .questionBox,
+  .surveyBox {
+    font-size: 10px;
+    padding: 12px;
+  }
+
+  .option {
+    font-size: 12px;
+    height: 45px;
+  }
+
+  .subText {
+    font-size: 16px;
+  }
+
+  .prevButton,
+  .nextButton {
+    font-size: 16px;
+    height: 40px;
+  }
+
+  .optionImage {
+    width: 100%;
+    height: auto;
+  }
+
+  .longQuestion {
+    font-size: 12px;
+    line-height: 1.5;
+  }
 }

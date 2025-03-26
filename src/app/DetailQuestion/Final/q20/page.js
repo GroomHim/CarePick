@@ -62,18 +62,18 @@ export default function FinalQ3() {
 
     // 5. 최종 피부 타입 매칭 (1~12번)
     const skinTypeMap = {
-      "Oily - Sensitive - Pigmented"        : "지성 1번",
-      "Oily - Resistant - Pigmented"        : "지성 2번",
-      "Oily - Sensitive - Non-Pigmented"    : "지성 3번",
-      "Oily - Resistant - Non-Pigmented"    : "지성 4번",
-      "Neutral - Sensitive - Pigmented"     : "중성 1번",
-      "Neutral - Resistant - Pigmented"     : "중성 2번",
-      "Neutral - Sensitive - Non-Pigmented" : "중성 3번",
-      "Neutral - Resistant - Non-Pigmented" : "중성 4번",
-      "Dry - Sensitive - Pigmented"         : "건성 1번",
-      "Dry - Resistant - Pigmented"         : "건성 2번",
-      "Dry - Sensitive - Non-Pigmented"     : "건성 3번",
-      "Dry - Resistant - Non-Pigmented"     : "건성 4번",
+      "Oily - Sensitive - Pigmented": "지성 1번",
+      "Oily - Resistant - Pigmented": "지성 2번",
+      "Oily - Sensitive - Non-Pigmented": "지성 3번",
+      "Oily - Resistant - Non-Pigmented": "지성 4번",
+      "Neutral - Sensitive - Pigmented": "중성 1번",
+      "Neutral - Resistant - Pigmented": "중성 2번",
+      "Neutral - Sensitive - Non-Pigmented": "중성 3번",
+      "Neutral - Resistant - Non-Pigmented": "중성 4번",
+      "Dry - Sensitive - Pigmented": "건성 1번",
+      "Dry - Resistant - Pigmented": "건성 2번",
+      "Dry - Sensitive - Non-Pigmented": "건성 3번",
+      "Dry - Resistant - Non-Pigmented": "건성 4번",
     };
 
     const finalResult = skinTypeMap[finalSkinType];
@@ -119,7 +119,7 @@ export default function FinalQ3() {
               }`}
               onClick={() => handleOptionClick(option.value)}
             >
-              <span style={{ fontSize: "18px" }}>{option.label}</span>
+              <span>{option.label}</span>
             </button>
           ))}
         </div>

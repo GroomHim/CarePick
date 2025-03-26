@@ -33,3 +33,43 @@
   font-weight: 500;
   color: #949598;
 }
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 20px;
+    height: 100vh;
+    justify-content: center;
+  }
+
+  .title {
+    font-size: 30px;
+    margin-top: 60px;
+    text-align: center;
+  }
+
+  .subtitle {
+    font-size: 20px;
+    margin-bottom: 60px;
+    text-align: center;
+  }
+
+  .loadingText {
+    font-size: 18px;
+    margin-top: 60px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 28px;
+  }
+
+  .subtitle {
+    font-size: 18px;
+  }
+
+  .loadingText {
+    font-size: 16px;
+  }
+}
