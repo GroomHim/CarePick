@@ -125,12 +125,12 @@
   transform: translateX(-50%);
   background-color: #f8f8f8;
   color: #4793d9;
-  border: none;
+  border: 1px solid #4793d9;
   padding: 3px 15px;
   font-size: 13px;
   font-weight: 500;
   cursor: pointer;
-  border-radius: 4px;
+  border-radius: 20px;
   transition: all 0.2s ease;
   z-index: 2;
   display: block;
@@ -146,8 +146,8 @@
 }
 
 .readMoreButton:hover {
-  color: #3a7ab5;
-  text-decoration: underline;
+  background-color: #4793d9;
+  color: white;
 }
 
 /* 더보기 버튼이 있을 때만 그라데이션 효과 적용 */
