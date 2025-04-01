@@ -128,16 +128,35 @@
   padding: 0;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
 }
 
 .optionImage {
   width: 100%;
-  aspect-ratio: 1 / 1; /* ✅ 1:1 비율 고정 (정사각형) */
-  object-fit: cover; /* ✅ 안 잘리게, 넘치는 부분은 crop */
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
   border-radius: 10px;
   border: 2px solid transparent;
   display: block;
 }
+
+.optionText {
+  font-size: 14px;
+  color: #333;
+  text-align: center;
+  margin-top: 4px;
+  width: 100%;
+  padding: 0 8px;
+  box-sizing: border-box;
+  line-height: 1.4;
+  white-space: pre-line;
+  font-weight: 600;
+}
+
 .optionImage:hover {
   border: 2px solid rgb(176, 176, 176);
 }

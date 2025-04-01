@@ -10,13 +10,12 @@ export default function SurveyQuestion() {
 
   // 이미지 파일 경로 설정
   const options = [
-    { id: "photo1", src: "/skin/1.png", alt: "매우 건조하다", value: 1 },
-    { id: "photo2", src: "/skin/2.png", alt: "약간 건조하다", value: 2 },
-    { id: "photo3", src: "/skin/3.png", alt: "보통이다", value: 3 },
-    { id: "photo4", src: "/skin/4.png", alt: "약간 번들거린다", value: 4 },
-    { id: "photo5", src: "/skin/5.png", alt: "매우 번들거린다", value: 5 },
+    { id: "photo1", src: "/skin/1.png", alt: "아무런 변화가 없다.", value: 1 },
+    { id: "photo2", src: "/skin/2.png", alt: "유분기가 생기나 눈에 띄는 \n 변화는 아니다.", value: 2 },
+    { id: "photo3", src: "/skin/3.png", alt: "유뷴기가 눈에 보이는 정도이나 \n불편한 정도는 아니다.", value: 3 },
+    { id: "photo4", src: "/skin/4.png", alt: "유분기가 눈에 띄게 보이고 \n 번들거림이 심하다.", value: 4 },
+    { id: "photo5", src: "/skin/5.png", alt: "기름종이를 이용해 닦아내 주어야 할 \n 정도로 유분기가 심하다.", value: 5 },
   ];
-
   const [selectedOption, setSelectedOption] = useState(null);
 
   // 저장된 선택값 불러오기 (localStorage에서 유지)
@@ -68,9 +67,9 @@ export default function SurveyQuestion() {
             <button
               key={option.id}
               className={`${styles.imageOption} ${
-                selectedOption === option.id ? styles.selected : ""
+                selectedOption === option.value ? styles.selected : ""
               }`}
-              onClick={() => handleOptionSelect(option.id, option.value)}
+              onClick={() => handleOptionSelect(option.value)}
             >
               <Image
                 src={option.src}
@@ -79,7 +78,7 @@ export default function SurveyQuestion() {
                 height={200}
                 className={styles.optionImage}
               />
-              {option.label}
+              <span className={styles.optionText}>{option.alt}</span>
             </button>
           ))}
         </div>
