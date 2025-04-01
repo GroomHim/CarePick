@@ -87,6 +87,7 @@
 
 .buttonContainer {
   display: flex;
+  flex-direction: row; /* ✅가로 정렬 유지 */
   justify-content: space-between;
   margin-top: 20px;
 }
@@ -212,7 +213,9 @@
   }
 
   .buttonContainer {
-    flex-direction: column;
+    display: flex;
+    flex-direction: row; /* ✅가로 정렬 유지 */
+    justify-content: space-between;
     gap: 10px;
   }
 
@@ -241,6 +244,10 @@
 
 /* ✅ 반응형: 모바일 */
 @media (max-width: 480px) {
+  .buttonContainer {
+    flex-direction: row; /* ✅ 가로 정렬 유지 */
+    gap: 6px;
+  }
   .questionBox,
   .surveyBox {
     font-size: 10px;
