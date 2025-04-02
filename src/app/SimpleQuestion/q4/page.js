@@ -7,7 +7,7 @@ export default function SurveyQuestion() {
   const router = useRouter();
   const question = "다음 중 해당하는 것을 모두 고르세요.";
   const options = [
-    "햇빛에 타면 빨개지기 보다 깨어진다.",
+    "햇빛에 타면 빨개지기 보다 까매진다.",
     "여드름 자국이 갈색으로 변한다.",
     "햇빛을 받으면 주근깨가 생긴다.",
     "피부가 전체적으로 얼룩덜룩 하다.",
