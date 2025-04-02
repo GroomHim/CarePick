@@ -1,29 +1,70 @@
 "use client";
 import { useRouter } from "next/navigation";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
+import { getSkinTypeFromLocalStorage } from "../data/skinTypes";
 import styles from "../styles/Result.module.css";
 import ProductRecommendation from "./ProductRecommendation";
 import SkinTypeResult from "./SkinTypeResult";
-import { getSkinTypeFromLocalStorage } from "../data/skinTypes";
 
 export default function ResultPage() {
   const router = useRouter();
   const [typeInfo, setTypeInfo] = useState({});
 
-  // 컴포넌트 마운트 시 로컬스토리지에서 피부 타입 정보 가져오기
   useEffect(() => {
-    if (typeof window === 'undefined') return;
-    
+    if (typeof window === "undefined") return;
+
     try {
-      // 로컬스토리지에서 피부 타입 정보 가져오기
       const skinData = getSkinTypeFromLocalStorage();
-      
-      // 피부 타입 정보가 있으면 설정
+
       if (skinData && skinData.typeInfo) {
         setTypeInfo(skinData.typeInfo);
       } else {
-        console.log("피부 타입 정보가 없습니다:", localStorage.getItem("finalSkinType"));
+        console.log(
+          "피부 타입 정보가 없습니다:",
+          localStorage.getItem("finalSkinType")
+        );
       }
+
+      // ✅ 모든 질문 데이터 및 결과값 삭제 (정확히 반영)
+      const questionKeys = [
+        // 간단 질문
+        "Q1",
+        "Q2",
+        "Q3",
+        "Q4",
+        "Q5",
+        "Q6",
+
+        // 상세 질문 (예민도)
+        "Sensitive_Q1",
+        "Sensitive_Q2",
+        "Sensitive_Q3",
+        "Sensitive_Q4",
+        "Sensitive_Q5",
+        "Sensitive_Q6",
+
+        // 상세 질문 (착색도)
+        "Pigmented_Q1",
+        "Pigmented_Q2",
+        "Pigmented_Q3",
+        "Pigmented_Q4",
+        "Pigmented_Q5",
+        "Pigmented_Q6",
+
+        // 상세 질문 (최종 질문)
+        "Final_Q1",
+        "Final_Q2",
+        "Final_Q3",
+
+        // 계산 결과 값들
+        "totalScore",
+        "totalSensitiveScore",
+        "totalPigmentedScore",
+        "finalSkinType",
+      ];
+
+      questionKeys.forEach((key) => localStorage.removeItem(key));
+      console.log("모든 설문 데이터가 삭제되었습니다.");
     } catch (error) {
       console.error("피부 타입 정보 로드 실패:", error);
     }
@@ -49,10 +90,7 @@ export default function ResultPage() {
       </div>
 
       <div className={styles.resultBox}>
-        {/* 피부 타입 결과 컴포넌트 */}
         <SkinTypeResult typeInfo={typeInfo} />
-
-        {/* 제품 추천 컴포넌트 */}
         <ProductRecommendation products={typeInfo.products} />
       </div>
     </div>

@@ -79,6 +79,8 @@ export default function SurveyQuestion() {
                 height={200}
                 className={styles.optionImage}
               />
+              <span className={styles.optionText}>{option.alt}</span>{" "}
+              {/* ✅ 추가 */}
             </button>
           ))}
         </div>
